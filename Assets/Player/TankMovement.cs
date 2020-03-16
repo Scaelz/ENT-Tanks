@@ -18,7 +18,9 @@ public class TankMovement : MonoBehaviour
     public void Move(float force)
     {
         Vector3 movement = transform.forward * force * speed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+        Debug.Log(movement);
+        rb.AddForce(movement);
+        //rb.MovePosition(transform.position + movement);
     }
 
     public void Turn(float input_horizontal, float input_vertical)

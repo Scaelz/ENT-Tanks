@@ -302,7 +302,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &7511082876975200027
 MonoBehaviour:
@@ -350,6 +350,7 @@ MonoBehaviour:
   rearObsticleRadars:
   - {fileID: 8828529735936220618}
   - {fileID: 8672008318404224658}
+  turnTime: 0
 --- !u!1 &7511082877663364643
 GameObject:
   m_ObjectHideFlags: 0

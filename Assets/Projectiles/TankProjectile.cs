@@ -8,6 +8,8 @@ public class TankProjectile : MonoBehaviour, IProjectile
     Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float power;
+    [SerializeField] GameObject blockPickerGO;
+    [SerializeField] BlockPicker blockPicker;
     public float Power => power;
     public float Speed => speed;
 
@@ -33,8 +35,14 @@ public class TankProjectile : MonoBehaviour, IProjectile
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("HIT registered");
         if (other.tag != "Player")
         {
+            blockPickerGO.SetActive(true);
+            foreach (IDestructable item in blockPicker.GetDestructables())
+            {
+                item.Hit(Power);
+            }
             Destroy(gameObject);
         }
     }
