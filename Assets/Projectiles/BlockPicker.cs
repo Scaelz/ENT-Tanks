@@ -41,4 +41,9 @@ public class BlockPicker : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log(other);
+    }
 }

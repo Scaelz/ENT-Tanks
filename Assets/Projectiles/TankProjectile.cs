@@ -30,20 +30,36 @@ public class TankProjectile : MonoBehaviour, IProjectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("HIT registered");
-        if (other.tag != "Player")
+        if (collision.gameObject.GetComponent<IDestructable>() != null)
         {
-            blockPickerGO.SetActive(true);
             foreach (IDestructable item in blockPicker.GetDestructables())
             {
                 item.Hit(Power);
             }
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<IDestructable>() != null)
+        {
+            blockPickerGO.SetActive(true);
+            Transform target = blockPicker.transform;
+            target.position = transform.position;
+            //Vector3 scale = new Vector3(other.transform.localScale.x / 2, other.transform.localScale.y / 2, other.transform.localScale.z / 4);
+            //Collider[] colliders = Physics.OverlapBox(other.transform.position, scale, Quaternion.identity);
+
+            //foreach (Collider item in colliders)
+            //{
+            //    Destroy(item.gameObject);
+            //}
+
+            foreach (IDestructable item in blockPicker.GetDestructables())
+            {
+                item.Hit(Power);
+            }
+            //Destroy(gameObject);
         }
     }
 }
