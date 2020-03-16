@@ -70,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 4056696636721326332, guid: 84154e5fff22c274f8a7a69c98bc015e,
         type: 3}
       propertyPath: m_Name
-      value: Brick
+      value: MetalBlock_variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056696636721326332, guid: 84154e5fff22c274f8a7a69c98bc015e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4056696636721326311, guid: 84154e5fff22c274f8a7a69c98bc015e, type: 3}

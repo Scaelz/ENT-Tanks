@@ -35,7 +35,6 @@ public class TankProjectile : MonoBehaviour, IProjectile
     {
         if (other.tag != "Player")
         {
-            Debug.Log(other.name);
             Destroy(gameObject);
         }
     }

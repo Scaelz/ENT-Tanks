@@ -11,6 +11,7 @@ public class TankShoot : MonoBehaviour
     [SerializeField] float recoilPower;
     [SerializeField] float reloadSpeed;
     float reloadTimer;
+    bool canShoot = true;
     Rigidbody rb;
 
     private void Start()
@@ -20,24 +21,27 @@ public class TankShoot : MonoBehaviour
 
     private void Update()
     {
-        reloadTimer += Time.deltaTime;
-        if (Input.GetButtonDown("Jump"))
+        if (!canShoot)
         {
+            reloadTimer += Time.deltaTime;
             if (reloadTimer >= reloadSpeed)
             {
-                Shoot();
+                canShoot = !canShoot;
                 reloadTimer = 0;
             }
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
-        GameObject go = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
-        Debug.Log(muzzle.rotation);
-        TankProjectile projectile = go.GetComponent<TankProjectile>();
-        projectile.SetSpeed(shootPower);
-        Recoil();
+        if (canShoot)
+        {
+            GameObject go = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
+            TankProjectile projectile = go.GetComponent<TankProjectile>();
+            projectile.SetSpeed(shootPower);
+            Recoil();
+            canShoot = !canShoot;
+        }
     }
 
     void Recoil()

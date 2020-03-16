@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 7412337632578798629}
   - component: {fileID: 7412337632578798630}
   - component: {fileID: 7412337632578798635}
+  - component: {fileID: 6112154993567843063}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -365,3 +366,17 @@ MonoBehaviour:
     type: 3}
   muzzle: {fileID: 7412337631622231314}
   shootPower: 2500
+  recoilPower: 50
+  reloadSpeed: 1
+--- !u!114 &6112154993567843063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412337632578798631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d402a6346410344b8e220c073b388c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

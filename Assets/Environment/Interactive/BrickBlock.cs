@@ -10,19 +10,12 @@ public class BrickBlock : MonoBehaviour, IDestructable
 
     public event Action<float> OnGotHit;
     public event Action OnDestroyed;
-    MeshDestroy meshDestroy;
-
-    private void Start()
-    {
-        meshDestroy = GetComponent<MeshDestroy>();
-    }
-
 
     public void Hit(float damage)
     {
         health -= damage;
         OnGotHit?.Invoke(damage);
-        meshDestroy.DestroyMesh();
+        //meshDestroy.DestroyMesh();
         if(health <= 0)
         {
             DestroyBlock();
@@ -33,15 +26,6 @@ public class BrickBlock : MonoBehaviour, IDestructable
     {
         OnDestroyed?.Invoke();
         gameObject.SetActive(false);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
-        if (projectile != null)
-        {
-            Hit(projectile.Power);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
