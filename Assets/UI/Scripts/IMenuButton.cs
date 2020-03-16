@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class IMenuButton : MonoBehaviour
 {
-    [SerializeField] protected GameObject optionsPanel;
-    [SerializeField] protected GameObject mainMenuPanel;
+    [SerializeField] protected GameObject firstPanel;
+    [SerializeField] protected GameObject secondPanel;
     [SerializeField] protected int thisIndex;
     [SerializeField] protected MenuButtonController menuButtonController;
     //[SerializeField] AnimPlaySound animPlaySound;
@@ -49,10 +49,13 @@ public abstract class IMenuButton : MonoBehaviour
     virtual public void OnPressedMenu() { }
     protected void OnEnablePanel(GameObject objectHide, GameObject objectShow)
     {
+        if (objectShow != null)
+        {
+            objectShow.GetComponent<MenuButtonController>().SetIsAlive(true);
+            objectShow.SetActive(true);
+        }
         objectHide.SetActive(false);
         objectHide.GetComponent<MenuButtonController>().SetIsAlive(false);
-        objectShow.GetComponent<MenuButtonController>().SetIsAlive(true);
-        objectShow.SetActive(true);
     }
     protected IEnumerator WaitAndQuitGame()
     {
@@ -63,6 +66,6 @@ public abstract class IMenuButton : MonoBehaviour
     protected IEnumerator WaitAndEnable()
     {
         yield return new WaitForSeconds(waitTime);
-        OnEnablePanel(mainMenuPanel, optionsPanel);
+        OnEnablePanel(firstPanel, secondPanel);
     }
 }

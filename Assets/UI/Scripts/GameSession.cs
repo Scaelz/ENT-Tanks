@@ -11,38 +11,52 @@ public class GameSession : MonoBehaviour
 
     MenuButtonController menuButtonController;
     bool isOptions = false;
+    float waitTime = 0.4f;
 
     private void Start()
     {
-        menuButtonController = optionMenu.GetComponent<MenuButtonController>();
-        isOptions = menuButtonController.IsAlive();
+        if (optionMenu != null)
+        {
+            menuButtonController = optionMenu.GetComponent<MenuButtonController>();
+            isOptions = menuButtonController.IsAlive();
+        }
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && optionMenu != null)
+        HideOptionsMenu();
+    }
+
+    private void HideOptionsMenu()
+    {
+        if (optionMenu != null)
         {
-            isOptions = menuButtonController.IsAlive();
-            if (isOptions)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                isOptions = false;
-                menuButtonController.SetIndex(0);
+                isOptions = menuButtonController.IsAlive();
+                if (isOptions)
+                {
+                    isOptions = false;
+                    menuButtonController.SetIndex(menuButtonController.GetMaxIndex());
+                }
+                else
+                {
+                    isOptions = true;
+                }
+                optionMenu.SetActive(isOptions);
+                menuButtonController.SetIsAlive(isOptions);
             }
-            else
+            if (isOptions && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0))
+                && menuButtonController.GetIndex() == menuButtonController.GetMaxIndex())
             {
-                isOptions = true;
+                StartCoroutine(WaitAndSet());
             }
-            optionMenu.SetActive(isOptions);
-            menuButtonController.SetIsAlive(isOptions);
-        }
-        if (isOptions && Input.GetKeyDown(KeyCode.Return) && menuButtonController.GetIndex() == 2 || Input.GetKeyDown(KeyCode.Mouse0) && menuButtonController.GetIndex() == 2)
-        {
-            StartCoroutine(WaitAndSet());
         }
     }
+
     IEnumerator WaitAndSet()
     {
-        yield return new WaitForSeconds(0.4f);
-        menuButtonController.SetIndex(0);
+        yield return new WaitForSeconds(waitTime);
+        menuButtonController.SetIndex(menuButtonController.GetMaxIndex());
     }
     public void SetVolume(float volume) => CheckVolume("volume", volume);
     public void SetMusicVolume(float volume) => CheckVolume("music", volume);
@@ -51,5 +65,18 @@ public class GameSession : MonoBehaviour
     private void CheckVolume(string mixerChannel, float volume)
     {
         audioMixer.SetFloat(mixerChannel, Mathf.Lerp(-80, 0, Mathf.Pow(volume, 0.25f)));
+    }
+
+    public void SetDefaultVolume()
+    {
+        SetVolume(0.8f);
+        SetMusicVolume(0.8f);
+        SetFXVolume(0.8f);
+
+        SliderUI[] sliderUIs = FindObjectsOfType<SliderUI>();
+        foreach (SliderUI slider in sliderUIs)
+        {
+            slider.SetVolume();
+        }
     }
 }

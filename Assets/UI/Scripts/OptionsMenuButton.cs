@@ -34,8 +34,8 @@ public class OptionsMenuButton : IMenuButton, IPointerEnterHandler, IPointerExit
         }
         else
         {
-            volumeMenu.SetActive(false);
-            controlsMenu.SetActive(false);
+            //volumeMenu.SetActive(false);
+            //controlsMenu.SetActive(false);
         }
     }
 
@@ -61,9 +61,12 @@ public class OptionsMenuButton : IMenuButton, IPointerEnterHandler, IPointerExit
             }
         }
     }
-    protected IEnumerator WaitAndEnable()
+
+    IEnumerator WaitAndEnable()
     {
         yield return new WaitForSeconds(waitTime);
-        OnEnablePanel(optionsPanel, mainMenuPanel);
+        OnEnablePanel(firstPanel, secondPanel);
+        volumeMenu.SetActive(false);
+        controlsMenu.SetActive(false);
     }
 }

@@ -7,9 +7,11 @@ using UnityEngine.EventSystems;
 
 public class MenuButton : IMenuButton, IPointerEnterHandler, IPointerExitHandler
 {
+    string nameGameScene;
     [SerializeField] GameObject messagePanel;
     private void Start()
     {
+        nameGameScene = "Test Options";
         Components();
     }
 
@@ -57,13 +59,13 @@ public class MenuButton : IMenuButton, IPointerEnterHandler, IPointerExitHandler
     IEnumerator WaitAndLoadGame()
     {
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("StartGame");
+        SceneManager.LoadScene(nameGameScene);
     }
 
     IEnumerator WaitAndEnableMessageBox()
     {
         yield return new WaitForSeconds(waitTime);
-        OnEnablePanelBox(mainMenuPanel, messagePanel);
+        OnEnablePanelBox(firstPanel, messagePanel);
     }
     void OnEnablePanelBox(GameObject objectHide, GameObject objectShow)
     {

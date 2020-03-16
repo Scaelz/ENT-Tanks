@@ -45,7 +45,7 @@ public class MessageButton : IMenuButton, IPointerEnterHandler, IPointerExitHand
     IEnumerator WaitAndEnableMessageBox()
     {
         yield return new WaitForSeconds(waitTime);
-        OnEnablePanelBox(messagePanel, mainMenuPanel);
+        OnEnablePanelBox(messagePanel, firstPanel);
     }
     void OnEnablePanelBox(GameObject objectHide, GameObject objectShow)
     {
