@@ -7,6 +7,7 @@ public class BrickBlock : MonoBehaviour, IDestructable
 {
     [SerializeField] float health;
     [SerializeField] GameObject destroyedVersion;
+    [SerializeField] LayerMask collisionMask;
     MeshRenderer renderer;
     Collider cll;
     public float Health { get => health; }
@@ -17,6 +18,7 @@ public class BrickBlock : MonoBehaviour, IDestructable
 
     private void Start()
     {
+        
         renderer = GetComponent<MeshRenderer>();
         cll = GetComponent<Collider>();
     }
@@ -35,9 +37,14 @@ public class BrickBlock : MonoBehaviour, IDestructable
     void DestroyBlock()
     {
         OnDestroyed?.Invoke();
-        renderer.enabled = false;
-        cll.enabled = false;
-        destroyedVersion.SetActive(true);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("BrokenParts");
+        rb.AddForce(new Vector3(30, 30, 30));
+        Destroy(gameObject, 1.5f);
+        //renderer.enabled = false;
+        //cll.enabled = false;
+        //destroyedVersion.SetActive(true);
         //gameObject.SetActive(false);
     }
 
