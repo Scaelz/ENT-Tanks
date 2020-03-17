@@ -30,36 +30,29 @@ public class TankProjectile : MonoBehaviour, IProjectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<IDestructable>() != null)
+        Dictionary<IDestructable, List<Collider>> dict = new Dictionary<IDestructable, List<Collider>>();
+        Vector3 dir = -transform.forward;
+        dir = dir.normalized;
+        foreach (Collider item in blockPicker.GetDestructables())
         {
-            foreach (IDestructable item in blockPicker.GetDestructables())
+            IDestructable block = item.gameObject.GetComponentInParent<IDestructable>();
+            if (dict.ContainsKey(block))
             {
-                item.Hit(Power);
+                dict[block].Add(item);
             }
-            Destroy(gameObject);
+            else
+            {
+                List<Collider> colliders = new List<Collider>();
+                colliders.Add(item);
+                dict.Add(block, colliders);
+            }
         }
+        foreach (KeyValuePair<IDestructable, List<Collider>> item in dict)
+        {
+            item.Key.Hit(item.Value, dir);
+        }
+        Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<IDestructable>() != null)
-        {
-            blockPickerGO.SetActive(true);
-            Transform target = blockPicker.transform;
-            target.position = transform.position;
-            //Vector3 scale = new Vector3(other.transform.localScale.x / 2, other.transform.localScale.y / 2, other.transform.localScale.z / 4);
-            //Collider[] colliders = Physics.OverlapBox(other.transform.position, scale, Quaternion.identity);
 
-            //foreach (Collider item in colliders)
-            //{
-            //    Destroy(item.gameObject);
-            //}
-
-            foreach (IDestructable item in blockPicker.GetDestructables())
-            {
-                item.Hit(Power);
-            }
-            //Destroy(gameObject);
-        }
-    }
 }

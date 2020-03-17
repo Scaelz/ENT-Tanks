@@ -4,46 +4,38 @@ using UnityEngine;
 
 public class BlockPicker : MonoBehaviour
 {
-    List<IDestructable> destructables;
+    [SerializeField] LayerMask mask;
+    int maskValue;
+    List<Collider> destructables;
 
     private void Start()
     {
-        destructables = new List<IDestructable>();
+        maskValue = LayerMask.NameToLayer("BrickParts");
+        Debug.Log(maskValue);
+        destructables = new List<Collider>();
     }
 
-    public List<IDestructable> GetDestructables() => destructables;
-
-    IDestructable GetDestructable(Collider other)
-    {
-        return other.gameObject.GetComponent<IDestructable>();
-    }
+    public List<Collider> GetDestructables() => destructables;
 
     private void OnTriggerEnter(Collider other)
     {
-        IDestructable destructable = GetDestructable(other);
-        if (destructable != null)
+        if (other.gameObject.layer == maskValue)
         {
-            if (!destructables.Contains(destructable))
+            if (!destructables.Contains(other))
             {
-                destructables.Add(destructable);
+                destructables.Add(other);
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        IDestructable destructable = GetDestructable(other);
-        if (destructable != null)
+        if (other.gameObject.layer == maskValue)
         {
-            if (destructables.Contains(destructable))
+            if (destructables.Contains(other))
             {
-                destructables.Remove(destructable);
+                destructables.Remove(other);
             }
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log(other);
     }
 }
