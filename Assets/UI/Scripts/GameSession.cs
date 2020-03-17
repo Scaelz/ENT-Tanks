@@ -13,8 +13,13 @@ public class GameSession : MonoBehaviour
     bool isOptions = false;
     float waitTime = 0.4f;
 
+    float masterVolume;
+    float musicVolume;
+    float FXVolume;
+
     private void Start()
     {
+        LoadVolume();
         if (optionMenu != null)
         {
             menuButtonController = optionMenu.GetComponent<MenuButtonController>();
@@ -58,7 +63,7 @@ public class GameSession : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         menuButtonController.SetIndex(menuButtonController.GetMaxIndex());
     }
-    public void SetVolume(float volume) => CheckVolume("volume", volume);
+    public void SetMasterVolume(float volume) => CheckVolume("volume", volume);
     public void SetMusicVolume(float volume) => CheckVolume("music", volume);
     public void SetFXVolume(float volume) => CheckVolume("FX", volume);
 
@@ -66,17 +71,44 @@ public class GameSession : MonoBehaviour
     {
         audioMixer.SetFloat(mixerChannel, Mathf.Lerp(-80, 0, Mathf.Pow(volume, 0.25f)));
     }
+    private void LoadVolume()
+    {
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            masterVolume = PlayerPrefs.GetFloat("volume");
+            musicVolume = PlayerPrefs.GetFloat("music");
+            FXVolume = PlayerPrefs.GetFloat("FX");
 
+            SetMasterVolume(masterVolume);
+            SetMusicVolume(musicVolume);
+            SetFXVolume(FXVolume);
+        }
+        else
+        {
+            SetDefaultVolume();
+        }
+    }
+    /*
+    private void SaveVolume(string mixerChannel, float volume)
+    {
+        PlayerPrefs.SetFloat(mixerChannel, volume);
+    }
+    
+    */
     public void SetDefaultVolume()
     {
-        SetVolume(0.8f);
+        SetMasterVolume(0.8f);
         SetMusicVolume(0.8f);
         SetFXVolume(0.8f);
+        SetValueSlider();
+    }
 
+    private void SetValueSlider()
+    {
         SliderUI[] sliderUIs = FindObjectsOfType<SliderUI>();
         foreach (SliderUI slider in sliderUIs)
         {
-            slider.SetVolume();
+            slider.SetVolume(0.8f);
         }
     }
 }

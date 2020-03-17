@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ce20607f1d101438b145a1494267e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeName: volume
 --- !u!114 &2140971941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ce20607f1d101438b145a1494267e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeName: FX
 --- !u!114 &296414333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ce20607f1d101438b145a1494267e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeName: music
 --- !u!1001 &3195956849974922971
 PrefabInstance:
   m_ObjectHideFlags: 0

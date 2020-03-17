@@ -5,8 +5,22 @@ using UnityEngine.UI;
 
 public class SliderUI : MonoBehaviour
 {
-    public void SetVolume(float value = 0.8f)
+    [SerializeField] string volumeName;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey(volumeName)) SetVolume(PlayerPrefs.GetFloat(volumeName));
+        else
+        {
+            Debug.Log(volumeName);
+            Debug.Log("no prefs");
+            SetVolume(0.8f);
+        }
+    }
+
+    public void SetVolume(float value)
     {
         gameObject.GetComponent<Slider>().value = value;
+        PlayerPrefs.SetFloat(volumeName, value);
     }
 }
