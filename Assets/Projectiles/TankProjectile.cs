@@ -30,12 +30,12 @@ public class TankProjectile : MonoBehaviour, IProjectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        Dictionary<IDestructable, List<Collider>> dict = new Dictionary<IDestructable, List<Collider>>();
+        Dictionary<IHitable, List<Collider>> dict = new Dictionary<IHitable, List<Collider>>();
         Vector3 dir = -transform.forward;
         dir = dir.normalized;
         foreach (Collider item in blockPicker.GetDestructables())
         {
-            IDestructable block = item.gameObject.GetComponentInParent<IDestructable>();
+            IHitable block = item.gameObject.GetComponentInParent<IHitable>();
             if (dict.ContainsKey(block))
             {
                 dict[block].Add(item);
@@ -47,7 +47,7 @@ public class TankProjectile : MonoBehaviour, IProjectile
                 dict.Add(block, colliders);
             }
         }
-        foreach (KeyValuePair<IDestructable, List<Collider>> item in dict)
+        foreach (KeyValuePair<IHitable, List<Collider>> item in dict)
         {
             item.Key.Hit(item.Value, dir);
         }

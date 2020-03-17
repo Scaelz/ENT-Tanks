@@ -11,7 +11,6 @@ public class BlockPicker : MonoBehaviour
     private void Start()
     {
         maskValue = LayerMask.NameToLayer("BrickParts");
-        Debug.Log(maskValue);
         destructables = new List<Collider>();
     }
 
