@@ -36,6 +36,18 @@ public abstract class IMenuButton : MonoBehaviour
         {
             animator.SetBool("selected", false);
         }
+        if (menuButtonController.GetMaxIndex() == thisIndex)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && menuButtonController.IsAlive())
+            {
+                animator.SetBool("pressed", true);
+                OnPressedMenu();
+            }
+            else if (animator.GetBool("pressed"))
+            {
+                animator.SetBool("pressed", false);
+            }
+        }
     }
 
     protected void Components()
