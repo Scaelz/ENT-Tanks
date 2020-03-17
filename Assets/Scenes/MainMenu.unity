@@ -751,7 +751,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.8391076e+30, z: 1.7247627e+25, w: 3878.9658}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2088,6 +2088,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 935164632303777202, guid: 5cdf30e4d468a094fb4d535e328741ad,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 976939e516e48324fb4ee9d8160ecb39,
+        type: 2}
+    - target: {fileID: 935164632303777202, guid: 5cdf30e4d468a094fb4d535e328741ad,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6486339333858183222, guid: 976939e516e48324fb4ee9d8160ecb39,
+        type: 2}
+    - target: {fileID: 935164632303777202, guid: 5cdf30e4d468a094fb4d535e328741ad,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4405280626050018728, guid: 5cdf30e4d468a094fb4d535e328741ad,
         type: 3}
       propertyPath: secondPanel
@@ -2160,6 +2177,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cdf30e4d468a094fb4d535e328741ad, type: 3}
+--- !u!1 &935164632980752770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 935164632303777200, guid: 5cdf30e4d468a094fb4d535e328741ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 935164632980752769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &935164632980752771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935164632980752770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0.48557156, b: 0, a: 0.5}
+  m_EffectDistance: {x: 31.21, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &2244495317534472901
 PrefabInstance:
   m_ObjectHideFlags: 0
