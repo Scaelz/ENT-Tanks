@@ -9,7 +9,6 @@ public abstract class IMenuButton : MonoBehaviour
     [SerializeField] protected GameObject secondPanel;
     [SerializeField] protected int thisIndex;
     [SerializeField] protected MenuButtonController menuButtonController;
-    //[SerializeField] AnimPlaySound animPlaySound;
     protected Animator animator;
     protected AudioSource selectMenuSFX;
     protected AudioSource changeMenuSFX;
@@ -29,13 +28,13 @@ public abstract class IMenuButton : MonoBehaviour
             else if (animator.GetBool("pressed"))
             {
                 animator.SetBool("pressed", false);
-                //animPlaySound.disableOnce = true;
             }
         }
         else
         {
             animator.SetBool("selected", false);
         }
+
         if (menuButtonController.GetMaxIndex() == thisIndex)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && menuButtonController.IsAlive())
@@ -69,6 +68,7 @@ public abstract class IMenuButton : MonoBehaviour
         objectHide.SetActive(false);
         objectHide.GetComponent<MenuButtonController>().SetIsAlive(false);
     }
+    #region Coroutines
     protected IEnumerator WaitAndQuitGame()
     {
         yield return new WaitForSeconds(waitTime);
@@ -80,4 +80,5 @@ public abstract class IMenuButton : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         OnEnablePanel(firstPanel, secondPanel);
     }
+    #endregion
 }

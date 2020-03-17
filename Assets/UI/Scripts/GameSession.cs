@@ -63,6 +63,8 @@ public class GameSession : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         menuButtonController.SetIndex(menuButtonController.GetMaxIndex());
     }
+
+    #region Volume Settings
     public void SetMasterVolume(float volume) => CheckVolume("volume", volume);
     public void SetMusicVolume(float volume) => CheckVolume("music", volume);
     public void SetFXVolume(float volume) => CheckVolume("FX", volume);
@@ -124,4 +126,6 @@ public class GameSession : MonoBehaviour
             }
         }
     }
+    #endregion
+
 }
