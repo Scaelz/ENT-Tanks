@@ -13,9 +13,9 @@ public class GameSession : MonoBehaviour
     bool isOptions = false;
     float waitTime = 0.4f;
 
-    float masterVolume;
-    float musicVolume;
-    float FXVolume;
+    float masterVolume = 0.8f;
+    float musicVolume = 0.8f;
+    float FXVolume = 0.8f;
 
     private void Start()
     {
@@ -70,6 +70,7 @@ public class GameSession : MonoBehaviour
     private void CheckVolume(string mixerChannel, float volume)
     {
         audioMixer.SetFloat(mixerChannel, Mathf.Lerp(-80, 0, Mathf.Pow(volume, 0.25f)));
+        SaveVolume(mixerChannel, volume);
     }
     private void LoadVolume()
     {
@@ -87,28 +88,40 @@ public class GameSession : MonoBehaviour
         {
             SetDefaultVolume();
         }
+        SetValueSlider();
     }
-    /*
+    
     private void SaveVolume(string mixerChannel, float volume)
     {
         PlayerPrefs.SetFloat(mixerChannel, volume);
     }
     
-    */
     public void SetDefaultVolume()
     {
         SetMasterVolume(0.8f);
         SetMusicVolume(0.8f);
         SetFXVolume(0.8f);
-        SetValueSlider();
+        SetValueSlider(false);
     }
 
-    private void SetValueSlider()
+    private void SetValueSlider(bool valueDef = true)
     {
         SliderUI[] sliderUIs = FindObjectsOfType<SliderUI>();
-        foreach (SliderUI slider in sliderUIs)
+        if (valueDef)
         {
-            slider.SetVolume(0.8f);
+            foreach (SliderUI slider in sliderUIs)
+            {
+                if (slider.GetVolumeName() == "volume") slider.SetVolume(masterVolume);
+                else if (slider.GetVolumeName() == "music") slider.SetVolume(musicVolume);
+                else if (slider.GetVolumeName() == "FX") slider.SetVolume(FXVolume);
+            }
+        }
+        else
+        {
+            foreach (SliderUI slider in sliderUIs)
+            {
+                slider.SetVolume(0.8f);
+            }
         }
     }
 }
