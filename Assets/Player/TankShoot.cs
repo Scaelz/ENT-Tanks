@@ -10,6 +10,7 @@ public class TankShoot : MonoBehaviour
     [SerializeField] float shootPower;
     [SerializeField] float recoilPower;
     [SerializeField] float reloadSpeed;
+    [SerializeField] Transform cabinTransform;
     float reloadTimer;
     bool canShoot = true;
     Rigidbody rb;
@@ -19,8 +20,16 @@ public class TankShoot : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
+
     private void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            cabinTransform.LookAt(hit.point, Vector3.up);
+        }
+
         if (!canShoot)
         {
             reloadTimer += Time.deltaTime;
@@ -46,6 +55,6 @@ public class TankShoot : MonoBehaviour
 
     void Recoil()
     {
-        rb.AddForce(-transform.forward * recoilPower);
+        rb.AddForce(-cabinTransform.forward * recoilPower);
     }
 }

@@ -47,7 +47,9 @@ public class Brick : Block, IHitable
 
     void SetupExplosion(Rigidbody rb, Vector3 explosionDirection)
     {
-        rb.AddForce(explosionDirection * Random.Range(minDestructionForce, maxDestructionForce));  
+        float power = Random.Range(minDestructionForce, maxDestructionForce);
+        Debug.Log(power);
+        rb.AddForce(explosionDirection * power);  
     }
 
     void GetRidOfBrokenParts(Rigidbody rb)
