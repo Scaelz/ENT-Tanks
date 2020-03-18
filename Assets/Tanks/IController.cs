@@ -13,7 +13,4 @@ public interface IController
     ControlType TypeOfControl { get; }
     IMoveable Movement { get; }
     IShooter Shooting { get; }
-
-
-
 }
