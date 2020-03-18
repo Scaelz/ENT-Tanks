@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Controller
+public enum ControlType
 {
     AI,
     Player
@@ -10,6 +10,10 @@ public enum Controller
 
 public interface IController
 {
-    Controller Controller { get; }
+    ControlType TypeOfControl { get; }
+    IMoveable Movement { get; }
+    IShooter Shooting { get; }
+
+
 
 }

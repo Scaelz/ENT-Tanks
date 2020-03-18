@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITankMovement
+public interface IMoveable
 {
     float Speed { get; }
     float TurnSpeed { get; }
