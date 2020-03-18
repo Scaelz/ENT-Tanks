@@ -17,7 +17,7 @@ public class Block : MonoBehaviour, IHitable
 
     public event Action OnGotHit;
 
-    public virtual void Hit(List<Collider> colliders, Vector3 hitDirection)
+    public virtual void Hit(List<Collider> colliders, Vector3 hitDirection, Vector3 hitPoint)
     {
         throw new NotImplementedException();
     }

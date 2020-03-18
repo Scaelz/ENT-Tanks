@@ -19,7 +19,7 @@ public class Brick : Block, IHitable
         rigidbodies = GetComponentsInChildren<Rigidbody>();
     }
 
-    public override void Hit(List<Collider> colliders, Vector3 hitDirection)
+    public override void Hit(List<Collider> colliders, Vector3 hitDirection, Vector3 hitPoint)
     {
         foreach (Collider item in colliders)
         {
@@ -27,19 +27,19 @@ public class Brick : Block, IHitable
             rb.isKinematic = false;
             rb.gameObject.layer = Utils.GetLayerMaskInt(collisionLayer);
             SetupExplosion(rb, hitDirection);
-            Utils.PlayRandomSound(audioSource, hitAudioClips);
-            InstanciateHitEffect();
             GetRidOfBrokenParts(rb);
         }
+        Utils.PlayRandomSound(audioSource, hitAudioClips);
+        InstanciateHitEffect(hitPoint);
     }
 
-    void InstanciateHitEffect()
+    void InstanciateHitEffect(Vector3 spawnPoint)
     {
         if (hitEffectsPrefab.Length > 0)
         {
             GameObject vfxPrefab = hitEffectsPrefab[Random.Range(0, hitEffectsPrefab.Length)];
-            Transform spawnTransform = vfxSpawnPoint ?? transform;
-            GameObject vfxGo = Instantiate(vfxPrefab, spawnTransform.position, Quaternion.identity);
+            //Transform spawnTransform = vfxSpawnPoint == null ? spawnPoint : vfxSpawnPoint;
+            GameObject vfxGo = Instantiate(vfxPrefab, spawnPoint, Quaternion.identity);
             ParticleSystem particleSystem = vfxGo.GetComponent<ParticleSystem>();
             particleSystem.Play();
         }

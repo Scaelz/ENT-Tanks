@@ -49,7 +49,7 @@ public class TankProjectile : MonoBehaviour, IProjectile
         }
         foreach (KeyValuePair<IHitable, List<Collider>> item in dict)
         {
-            item.Key.Hit(item.Value, dir);
+            item.Key.Hit(item.Value, dir, collision.contacts[0].point);
         }
         Destroy(gameObject);
     }
