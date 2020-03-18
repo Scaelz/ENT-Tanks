@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ITankMovement : MonoBehaviour
+public interface ITankMovement
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    float Speed { get; }
+    float TurnSpeed { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Turn(Quaternion angle, float turnSpeed);
+    void Turn(float verticalInput, float horizontalInput);
+    void Move(float inputValue);
+    void Stop();
 }
