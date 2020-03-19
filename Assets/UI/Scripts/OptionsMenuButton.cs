@@ -11,12 +11,12 @@ public class OptionsMenuButton : IMenuButton, IPointerEnterHandler, IPointerExit
     [SerializeField] GameObject controlsMenu;
     private void Start()
     {
-        Components();
+        GetStartComponents();
     }
 
     private void Update()
     {
-        AnimatorControls(menuButtonController, thisIndex, animator, isOver);
+        AnimatorControls();
         OpenMenu();
     }
 
@@ -62,7 +62,7 @@ public class OptionsMenuButton : IMenuButton, IPointerEnterHandler, IPointerExit
         }
     }
 
-    IEnumerator WaitAndEnable()
+    protected override IEnumerator WaitAndEnable()
     {
         yield return new WaitForSeconds(waitTime);
         OnEnablePanel(firstPanel, secondPanel);

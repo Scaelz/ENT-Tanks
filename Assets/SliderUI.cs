@@ -9,7 +9,8 @@ public class SliderUI : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey(volumeName)) SetVolume(PlayerPrefs.GetFloat(volumeName));
+        if (PlayerPrefs.HasKey(volumeName)) 
+            SetVolume(PlayerPrefs.GetFloat(volumeName));
     }
 
     public string GetVolumeName() => volumeName;

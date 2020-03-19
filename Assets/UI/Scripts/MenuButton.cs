@@ -12,12 +12,12 @@ public class MenuButton : IMenuButton, IPointerEnterHandler, IPointerExitHandler
     private void Start()
     {
         nameGameScene = "Test Options";
-        Components();
+        GetStartComponents();
     }
 
     private void Update()
     {
-        AnimatorControls(menuButtonController, thisIndex, animator, isOver);
+        AnimatorControls();
     }
     
     public void OnPointerEnter(PointerEventData eventData)

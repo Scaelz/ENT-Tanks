@@ -15,7 +15,7 @@ public abstract class IMenuButton : MonoBehaviour
     protected float waitTime = 0.4f;
     protected bool isOver = false;
 
-    protected void AnimatorControls(MenuButtonController menuButtonController, int thisIndex, Animator animator, bool isOver)
+    protected void AnimatorControls()
     {
         if (menuButtonController.GetIndex() == thisIndex)
         {
@@ -49,7 +49,7 @@ public abstract class IMenuButton : MonoBehaviour
         }
     }
 
-    protected void Components()
+    protected void GetStartComponents()
     {
         SFX sfx = FindObjectOfType<SFX>();
         selectMenuSFX = sfx.GetSelectMenuSFX();
@@ -75,7 +75,7 @@ public abstract class IMenuButton : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-    protected IEnumerator WaitAndEnable()
+    protected virtual IEnumerator WaitAndEnable()
     {
         yield return new WaitForSeconds(waitTime);
         OnEnablePanel(firstPanel, secondPanel);

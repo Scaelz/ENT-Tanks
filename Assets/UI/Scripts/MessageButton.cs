@@ -8,12 +8,12 @@ public class MessageButton : IMenuButton, IPointerEnterHandler, IPointerExitHand
     [SerializeField] GameObject messagePanel;
     private void Start()
     {
-        Components();
+        GetStartComponents();
     }
 
     private void Update()
     {
-        AnimatorControls(menuButtonController, thisIndex, animator, isOver);
+        AnimatorControls();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

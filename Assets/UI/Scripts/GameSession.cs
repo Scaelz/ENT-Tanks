@@ -65,11 +65,11 @@ public class GameSession : MonoBehaviour
     }
 
     #region Volume Settings
-    public void SetMasterVolume(float volume) => CheckVolume("volume", volume);
-    public void SetMusicVolume(float volume) => CheckVolume("music", volume);
-    public void SetFXVolume(float volume) => CheckVolume("FX", volume);
+    public void SetMasterVolume(float volume) => SetMixerVolume("volume", volume);
+    public void SetMusicVolume(float volume) => SetMixerVolume("music", volume);
+    public void SetFXVolume(float volume) => SetMixerVolume("FX", volume);
 
-    private void CheckVolume(string mixerChannel, float volume)
+    private void SetMixerVolume(string mixerChannel, float volume)
     {
         audioMixer.SetFloat(mixerChannel, Mathf.Lerp(-80, 0, Mathf.Pow(volume, 0.25f)));
         SaveVolume(mixerChannel, volume);
