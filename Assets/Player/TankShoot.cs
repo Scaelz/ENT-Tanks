@@ -41,6 +41,15 @@ public class TankShoot : MonoBehaviour, IShooter
         }
     }
 
+    void AimAtCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            cabinTransform.LookAt(hit.point, Vector3.up);
+        }
+    }
+
     public void Aim(Vector3 aimPosition)
     {
 

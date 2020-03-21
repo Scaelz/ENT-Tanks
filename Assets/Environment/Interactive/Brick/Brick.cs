@@ -48,7 +48,6 @@ public class Brick : Block, IHitable
     void SetupExplosion(Rigidbody rb, Vector3 explosionDirection)
     {
         float power = Random.Range(minDestructionForce, maxDestructionForce);
-        Debug.Log(power);
         rb.AddForce(explosionDirection * power);  
     }
 

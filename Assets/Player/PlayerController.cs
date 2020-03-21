@@ -29,14 +29,7 @@ public class PlayerController : MonoBehaviour, IController
         Movement.Turn(h, v);
     }
 
-    void AimAtCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            cabinTransform.LookAt(hit.point, Vector3.up);
-        }
-    }
+
 
     // Update is called once per frame
     void Update()
