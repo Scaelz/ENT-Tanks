@@ -4,10 +4,11 @@ using UnityEngine;
 public class SpawnBonus : MonoBehaviour
 {
     [SerializeField] int chanceToSpawn = 30;
-    [SerializeField] List<GameObject> bonusObjects;
+    [SerializeField] GameObject bonusObject;
+    [SerializeField] List<Sprite> bonusObjects;
     [SerializeField] int [] bonusChances = {60, 30, 10};
 
-    int totalChance;
+    int totalChance, randomNumber;
     float minX, maxX, minZ, maxZ;
 
     void Start()
@@ -19,6 +20,14 @@ public class SpawnBonus : MonoBehaviour
         }
     }
 
+    private void MinMaxPosition()
+    {
+        maxX = transform.position.x + transform.localScale.x / 2;
+        minX = transform.position.x - transform.localScale.x / 2;
+        maxZ = transform.position.z + transform.localScale.z / 2;
+        minZ = transform.position.z - transform.localScale.z / 2;
+    }
+
     void Update()
     {
         SpawnObjectWithChance();
@@ -28,31 +37,31 @@ public class SpawnBonus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            int randomNumber = Random.Range(0, 100);
+            randomNumber = Random.Range(0, 100);
             if (randomNumber >= chanceToSpawn) return;
 
-            randomNumber = Random.Range(0, totalChance);
-            for (int i = 0; i < bonusChances.Length; i++)
+            SpawnBonusWithChance();
+        }
+    }
+
+    public void SpawnBonusWithChance()
+    {
+        randomNumber = Random.Range(0, totalChance);
+        for (int i = 0; i < bonusChances.Length; i++)
+        {
+            if (randomNumber <= bonusChances[i])
             {
-                if (randomNumber <= bonusChances[i])
-                {
-                    Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ, maxZ));
-                    Instantiate(bonusObjects[i], spawnPosition, Quaternion.identity);
-                    return;
-                }
-                else
-                {
-                    randomNumber -= bonusChances[i];
-                }
+                Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ, maxZ));
+                bonusObject.GetComponent<SpriteRenderer>().sprite = bonusObjects[i];
+                bonusObject.name = bonusObjects[i].name;
+                Instantiate(bonusObject, spawnPosition, Quaternion.AngleAxis(90f, new Vector3(1,0,0)));
+                return;
+            }
+            else
+            {
+                randomNumber -= bonusChances[i];
             }
         }
     }
 
-    private void MinMaxPosition()
-    {
-        maxX = transform.position.x + transform.localScale.x / 2;
-        minX = transform.position.x - transform.localScale.x / 2;
-        maxZ = transform.position.z + transform.localScale.z / 2;
-        minZ = transform.position.z - transform.localScale.z / 2;
-    }
 }
