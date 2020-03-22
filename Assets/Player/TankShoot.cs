@@ -15,6 +15,10 @@ public class TankShoot : MonoBehaviour
     bool canShoot = true;
     Rigidbody rb;
 
+    //Fire sound event
+    [FMODUnity.EventRef]
+    public string fireSound;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -50,6 +54,10 @@ public class TankShoot : MonoBehaviour
             projectile.SetSpeed(shootPower);
             Recoil();
             canShoot = !canShoot;
+
+            //Playing fire sound
+            FMODUnity.RuntimeManager.PlayOneShot(fireSound);
+
         }
     }
 

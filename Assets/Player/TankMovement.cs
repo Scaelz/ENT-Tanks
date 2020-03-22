@@ -9,10 +9,15 @@ public class TankMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float turnSpeed;
 
+    [FMODUnity.EventRef]
+    public string moveSound;
+    FMOD.Studio.EventInstance moveSoundEv;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveSoundEv = FMODUnity.RuntimeManager.CreateInstance(moveSound);
+        moveSoundEv.start();
     }
 
     public void Move(float force)
@@ -20,6 +25,7 @@ public class TankMovement : MonoBehaviour
         Vector3 movement = transform.forward * force * speed * Time.deltaTime;
         rb.AddForce(movement);
         //rb.MovePosition(transform.position + movement);
+
     }
 
     public void Turn(float input_horizontal, float input_vertical)
