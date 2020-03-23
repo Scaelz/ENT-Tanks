@@ -29,7 +29,14 @@ public class PlayerController : MonoBehaviour, IController
         Movement.Turn(h, v);
     }
 
-
+    void AimAtCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Shooting.Aim(hit.point);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,5 +45,6 @@ public class PlayerController : MonoBehaviour, IController
         {
             Shooting.Shoot();
         }
+        AimAtCursor();
     }
 }

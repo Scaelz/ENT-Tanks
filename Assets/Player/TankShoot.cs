@@ -15,15 +15,10 @@ public class TankShoot : MonoBehaviour, IShooter
     float reloadTimer;
     bool canShoot = true;
     Rigidbody rb;
-
     public event Action<Vector3, Vector3> OnShoot;
-
     public GameObject ProjectilePrefab => projectilePrefab;
-
     public float Power => shootPower;
-
     public float ReloadSpeed => reloadSpeed;
-
     public Transform Muzzle => muzzle;
 
     private void Start()
@@ -31,28 +26,17 @@ public class TankShoot : MonoBehaviour, IShooter
         rb = GetComponent<Rigidbody>();
     }
 
+    public void Aim(Vector3 aimPosition)
+    {
+        cabinTransform.LookAt(aimPosition, Vector3.up);
+    }
+
     private void Update()
     {
-        AimAtCursor();
-
         if (!canShoot)
         {
             Reload();
         }
-    }
-
-    void AimAtCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            cabinTransform.LookAt(hit.point, Vector3.up);
-        }
-    }
-
-    public void Aim(Vector3 aimPosition)
-    {
-
     }
 
     public void Shoot()
