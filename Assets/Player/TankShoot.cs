@@ -21,6 +21,11 @@ public class TankShoot : MonoBehaviour, IShooter
     public float ReloadSpeed => reloadSpeed;
     public Transform Muzzle => muzzle;
 
+    public Vector3 GetMuzzleDirection()
+    {
+        return cabinTransform.forward;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,7 +33,14 @@ public class TankShoot : MonoBehaviour, IShooter
 
     public void Aim(Vector3 aimPosition)
     {
-        cabinTransform.LookAt(aimPosition, Vector3.up);
+        var lookPos = aimPosition - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, Time.deltaTime);
+
+
+        //cabinTransform.LookAt(aimPosition, Vector3.up);
+        //transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.y, 0));
     }
 
     private void Update()

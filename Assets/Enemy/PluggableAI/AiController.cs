@@ -6,13 +6,14 @@ public class AiController : MonoBehaviour
 {
     [SerializeField] State currentState;
     [SerializeField] State remainState;
-
+    [SerializeField] float actionTime;
+    float timer;
 
     [SerializeField] EnemyMovement movement;
     public EnemyMovement Movement => movement;
     [SerializeField] TankShoot shooting;
-    public TankShoot Shooting => shooting; 
-
+    public TankShoot Shooting => shooting;
+    bool trackPlayer;
     PlayerController playerController;
     [SerializeField] Transform[] patrolRoute;
     [SerializeField] int patrolIndex;
@@ -29,6 +30,11 @@ public class AiController : MonoBehaviour
                 patrolIndex = value;
             }
         }
+    }
+
+    public void TrackPlayer(bool state)
+    {
+        trackPlayer = state;
     }
 
     public int GetRouteLength()
@@ -48,6 +54,10 @@ public class AiController : MonoBehaviour
 
     private void Update()
     {
+        if (trackPlayer)
+        {
+            Shooting.Aim(playerController.transform.position);
+        }
         currentState.UpdateState(this);
     }
 
@@ -70,6 +80,18 @@ public class AiController : MonoBehaviour
         if (newState != remainState)
         {
             currentState = newState;
+            OnStateChanged();
         }
+    }
+
+    public bool CheckActionTimer()
+    {
+        timer += Time.deltaTime;
+        return (timer >= actionTime);
+    }
+
+    void OnStateChanged()
+    {
+        timer = 0;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LookDecision : Decision
 {
     public LayerMask layerMask;
-    public float castRadius;
+    public float rayRadius;
 
     public override bool Decide(AiController controller)
     {
@@ -15,10 +15,12 @@ public class LookDecision : Decision
 
     bool Look(AiController controller)
     {
-        if(Physics.SphereCast(controller.transform.position, castRadius, 
-            controller.transform.forward, out RaycastHit hit, layerMask))
+        Debug.DrawRay(controller.transform.position, controller.transform.forward * 90, Color.red);
+        if(Physics.SphereCast(controller.transform.position, rayRadius, 
+            controller.transform.forward, out RaycastHit hit))
         {
-            return true;
+            if(hit.transform.tag == "Player")
+                return true;
         }
         return false;
     }

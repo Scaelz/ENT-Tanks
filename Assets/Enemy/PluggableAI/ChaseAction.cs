@@ -13,5 +13,6 @@ public class ChaseAction : AiAction
     void Chase(AiController controller)
     {
         controller.Movement.MoveTo(controller.GetTargetPosition());
+        controller.TrackPlayer(true);
     }
 }
