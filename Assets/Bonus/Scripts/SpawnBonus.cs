@@ -4,8 +4,7 @@ using UnityEngine;
 public class SpawnBonus : MonoBehaviour
 {
     [SerializeField] int chanceToSpawn = 30;
-    [SerializeField] GameObject bonusObject;
-    [SerializeField] List<Sprite> bonusObjects;
+    [SerializeField] List<GameObject> bonusObject;
     [SerializeField] int [] bonusChances = {60, 30, 10};
 
     int totalChance, randomNumber;
@@ -52,9 +51,7 @@ public class SpawnBonus : MonoBehaviour
             if (randomNumber <= bonusChances[i])
             {
                 Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ, maxZ));
-                bonusObject.GetComponent<SpriteRenderer>().sprite = bonusObjects[i];
-                bonusObject.name = bonusObjects[i].name;
-                Instantiate(bonusObject, spawnPosition, Quaternion.AngleAxis(90f, new Vector3(1,0,0)));
+                Instantiate(bonusObject[i], spawnPosition, Quaternion.AngleAxis(90f, new Vector3(1,0,0)));
                 return;
             }
             else

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 75047668590371630}
   - component: {fileID: 6409921944874026841}
   - component: {fileID: 6030611566475435328}
-  - component: {fileID: -2589358800733078052}
+  - component: {fileID: -4502934179038567611}
   m_Layer: 0
-  m_Name: Bonus
+  m_Name: BonusUpgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 6af186c644b0b1e43bdccfc8f91fcd64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd224c54142219f418f79a8a61c64835, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Height: 12
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 4.29}
---- !u!114 &-2589358800733078052
+--- !u!114 &-4502934179038567611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4378161695617784400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9459f42e214bc404ca2f2e4f81ca27f1, type: 3}
+  m_Script: {fileID: 11500000, guid: b172e4028ad649a4598e82b85bf14956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDeath: 25

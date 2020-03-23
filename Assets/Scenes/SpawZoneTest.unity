@@ -8134,13 +8134,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chanceToSpawn: 100
-  bonusObject: {fileID: 4378161695617784400, guid: bbf01dfd22fc2604db487501c8e94432,
-    type: 3}
-  bonusObjects:
-  - {fileID: 21300000, guid: 9c3c965435eaff84e9333f1ba71897ee, type: 3}
-  - {fileID: 21300000, guid: 6af186c644b0b1e43bdccfc8f91fcd64, type: 3}
-  - {fileID: 21300000, guid: bd224c54142219f418f79a8a61c64835, type: 3}
-  bonusChances: 3c0000001e0000000f000000
+  bonusObject:
+  - {fileID: 4378161695617784400, guid: 2d602d811870bd14b867a5e3bf284e58, type: 3}
+  - {fileID: 4378161695617784400, guid: d2e29bc0fa4c58a4eabb0175ccf7bdd3, type: 3}
+  - {fileID: 4378161695617784400, guid: 168742c3b305a894aab96a06826c8248, type: 3}
+  - {fileID: 4378161695617784400, guid: bbf01dfd22fc2604db487501c8e94432, type: 3}
+  - {fileID: 4378161695617784400, guid: b6731865bc77a7b4ba2e2715fab144b1, type: 3}
+  - {fileID: 4378161695617784400, guid: 1541ba33e12113d4e89296655cec90ce, type: 3}
+  bonusChances: 1e0000001e0000000f0000000f0000000500000005000000
 --- !u!23 &1874310496
 MeshRenderer:
   m_ObjectHideFlags: 0
