@@ -10,7 +10,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] GameObject optionMenu;
 
     MenuButtonController menuButtonController;
-    bool isOptions = false;
+    public bool isOptions { get; set; } = false;
     float waitTime = 0.4f;
 
     float masterVolume = 0.8f;

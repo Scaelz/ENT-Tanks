@@ -64,6 +64,7 @@ public class OptionsMenuButton : IMenuButton, IPointerEnterHandler, IPointerExit
 
     protected override IEnumerator WaitAndEnable()
     {
+        FindObjectOfType<GameSession>().isOptions = false;
         yield return new WaitForSeconds(waitTime);
         OnEnablePanel(firstPanel, secondPanel);
         volumeMenu.SetActive(false);
