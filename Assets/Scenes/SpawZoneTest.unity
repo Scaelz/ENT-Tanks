@@ -3671,8 +3671,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.3563156e-19, y: 1.3563156e-19, z: 3.0972774e+27,
-    w: 1.8308429e+25}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.4838628e-19}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -7423,7 +7422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hitEffectsPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+      objectReference: {fileID: 1121192042590650, guid: 4e7d883b216e85245b83d33122275249,
         type: 3}
     - target: {fileID: 1016490687129784800, guid: 84154e5fff22c274f8a7a69c98bc015e,
         type: 3}
