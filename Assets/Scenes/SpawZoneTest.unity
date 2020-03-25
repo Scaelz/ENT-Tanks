@@ -1029,9 +1029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef871ad7a27c2d4c9c11db2a95ebe23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 0}
-  xSize: 22
-  zSize: 20
+  blockPrefab: {fileID: 1789822612}
+  xSize: 1
+  zSize: 1
   offset: 10
 --- !u!4 &121338754
 Transform:
