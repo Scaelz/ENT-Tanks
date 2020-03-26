@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1743465396599816990}
   - component: {fileID: 1743465396599816986}
   - component: {fileID: -755334519795905791}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PorjectilePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743465396599816960}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 7676900960450935776}
   - component: {fileID: 2050762905}
   - component: {fileID: 5975239781823817707}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: blockTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

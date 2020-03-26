@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     public void MoveTo(Vector3 destination)
     {
         agent.SetDestination(destination);
+        agent.isStopped = false;
     }
 
     public bool IsMoving()

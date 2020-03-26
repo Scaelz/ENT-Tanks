@@ -17,6 +17,7 @@ public class AiController : MonoBehaviour
     PlayerController playerController;
     [SerializeField] Transform[] patrolRoute;
     [SerializeField] int patrolIndex;
+    Vector3 lastPlayerPosition;
     public int PatrolIndex
     {
         get
@@ -30,6 +31,21 @@ public class AiController : MonoBehaviour
                 patrolIndex = value;
             }
         }
+    }
+
+    public Vector3 GetLastSeenPosition()
+    {
+        return lastPlayerPosition;
+    }
+
+    public void SavePlayerPosition()
+    {
+        lastPlayerPosition = playerController.transform.position;
+    }
+
+    public void SetActionTime(float time)
+    {
+        actionTime = time;
     }
 
     public void TrackPlayer(bool state)
@@ -84,8 +100,9 @@ public class AiController : MonoBehaviour
         }
     }
 
-    public bool CheckActionTimer()
+    public bool CheckActionTimer(float countDown)
     {
+        actionTime = countDown;
         timer += Time.deltaTime;
         return (timer >= actionTime);
     }

@@ -15,9 +15,9 @@ public class LookDecision : Decision
 
     bool Look(AiController controller)
     {
-        Debug.DrawRay(controller.transform.position, controller.transform.forward * 90, Color.red);
-        if(Physics.SphereCast(controller.transform.position, rayRadius, 
-            controller.transform.forward, out RaycastHit hit))
+        Debug.DrawRay(controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward * 90, Color.red);
+        if(Physics.SphereCast(controller.Shooting.Muzzle.position, rayRadius,
+            controller.Shooting.Muzzle.forward, out RaycastHit hit, 1000, layerMask))
         {
             if(hit.transform.tag == "Player")
                 return true;

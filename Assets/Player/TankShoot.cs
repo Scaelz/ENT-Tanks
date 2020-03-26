@@ -36,11 +36,13 @@ public class TankShoot : MonoBehaviour, IShooter
         var lookPos = aimPosition - transform.position;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
-        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, Time.deltaTime);
+        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, 5 * Time.deltaTime);
+    }
 
-
-        //cabinTransform.LookAt(aimPosition, Vector3.up);
-        //transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.y, 0));
+    public void ResetMuzzle()
+    {
+        var rotation = Quaternion.LookRotation(transform.forward);
+        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, 5 * Time.deltaTime);
     }
 
     private void Update()

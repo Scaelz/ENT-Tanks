@@ -8,7 +8,7 @@ public class AttackAction : AiAction
 {
     public LayerMask layerMask;
     public float rayRadius;
-
+    public float countDown = 0;
     public override void Act(AiController controller)
     {
         Attack(controller);
@@ -16,7 +16,7 @@ public class AttackAction : AiAction
 
     void Attack(AiController controller)
     {
-        if (controller.CheckActionTimer())
+        if (controller.CheckActionTimer(countDown))
         {
             Debug.DrawRay(controller.transform.position, controller.Shooting.GetMuzzleDirection() * 90, Color.green);
             if (Physics.SphereCast(controller.transform.position, rayRadius,
