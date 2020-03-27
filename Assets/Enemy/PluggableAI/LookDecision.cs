@@ -19,6 +19,7 @@ public class LookDecision : Decision
         if(Physics.SphereCast(controller.Shooting.Muzzle.position, rayRadius,
             controller.Shooting.Muzzle.forward, out RaycastHit hit, 1000, layerMask))
         {
+            Debug.Log(hit.transform.name);
             if(hit.transform.tag == "Player")
                 return true;
         }

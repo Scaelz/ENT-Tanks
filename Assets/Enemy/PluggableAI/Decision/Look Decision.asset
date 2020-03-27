@@ -15,4 +15,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 3072
-  rayRadius: 1
+  rayRadius: 0.1
