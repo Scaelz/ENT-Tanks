@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 6112154993567843063}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &7412337632578798635
 MonoBehaviour:
@@ -126,9 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1743465396599816960, guid: 3ab7aff7fe07ad54da1ab9d55ea099ec,
     type: 3}
-  muzzle: {fileID: 0}
-  shootPower: 2500
-  recoilPower: 50
+  muzzle: {fileID: 8458231453096691230}
+  shootPower: 1200
+  recoilPower: 0
   reloadSpeed: 1
   cabinTransform: {fileID: 2378217002387136706}
 --- !u!114 &6112154993567843063
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8458231453096691230}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
