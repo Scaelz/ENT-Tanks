@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class TankMovement : MonoBehaviour
+public class TankMovement : MonoBehaviour, IMoveable
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float turnSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float Speed => speed;
+    public float TurnSpeed => turnSpeed;
 
     public void Move(float force)
     {
         Vector3 movement = transform.forward * force * speed * Time.deltaTime;
         rb.AddForce(movement);
-        //rb.MovePosition(transform.position + movement);
     }
 
     public void Turn(float input_horizontal, float input_vertical)
@@ -30,8 +25,13 @@ public class TankMovement : MonoBehaviour
         rb.MoveRotation(rb.rotation * q);
     }
 
-    public void Turn(Quaternion quaternion)
+    public void Turn(Quaternion angle, float turnSpeed)
     {
-        rb.MoveRotation(quaternion);
+        rb.MoveRotation(angle);
+    }
+
+    public void Stop()
+    {
+        rb.velocity = Vector3.zero;
     }
 }

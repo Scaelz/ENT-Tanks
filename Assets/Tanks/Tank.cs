@@ -5,8 +5,8 @@ using UnityEngine;
 public class Tank : MonoBehaviour
 {
     IController controller;
-    ITankMovement movement;
-    ITankShooting shooting;
+    IMoveable movement;
+    IShooter shooting;
 
 
 

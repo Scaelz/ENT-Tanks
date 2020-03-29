@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TankShoot), typeof(Rigidbody), typeof(TankMovement))]
-public class PlayerController : MonoBehaviour
-{
-    TankShoot shoot;
-    TankMovement movement;
+[RequireComponent(typeof(IMoveable), typeof(Rigidbody), typeof(IShooter))]
+public class PlayerController : MonoBehaviour, IController
+{ 
     Rigidbody rb;
+    [SerializeField] ControlType typeOfControl;
+    public ControlType TypeOfControl { get => typeOfControl; private set => typeOfControl = value; }
+
+    public IMoveable Movement { get; private set; }
+
+    public IShooter Shooting { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        shoot = GetComponent<TankShoot>();
-        movement = GetComponent<TankMovement>();
+        Shooting = GetComponent<IShooter>();
+        Movement = GetComponent<IMoveable>();
     }
 
     // Update is called once per frame
@@ -21,8 +25,17 @@ public class PlayerController : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        movement.Move(v);
-        movement.Turn(h, v);
+        Movement.Move(v);
+        Movement.Turn(h, v);
+    }
+
+    void AimAtCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Shooting.Aim(hit.point);
+        }
     }
 
     // Update is called once per frame
@@ -30,7 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            shoot.Shoot();
+            Shooting.Shoot();
         }
+        AimAtCursor();
     }
 }
