@@ -1816,6 +1816,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3925913471267408986, guid: 3c833f058986f344881811330216dd83,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925913471267408986, guid: 3c833f058986f344881811330216dd83,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 4281370338412900154, guid: 3c833f058986f344881811330216dd83,
         type: 3}
       propertyPath: patrolRoute.Array.data[0]
@@ -1896,6 +1906,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6898382523265063193, guid: 3c833f058986f344881811330216dd83,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898382523265063193, guid: 3c833f058986f344881811330216dd83,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c833f058986f344881811330216dd83, type: 3}
 --- !u!1 &725046466393865245 stripped
@@ -1916,5 +1936,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccdb49cd6a9a5a42be05e96e702ac02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
   armor: 20
