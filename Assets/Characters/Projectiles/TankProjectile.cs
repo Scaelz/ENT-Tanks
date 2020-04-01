@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class TankProjectile : MonoBehaviour, IProjectile
 {
+    [Header("Basic properties")]
     Rigidbody rb;
     [SerializeField] float speed;
     [SerializeField] float power;
@@ -12,6 +13,8 @@ public class TankProjectile : MonoBehaviour, IProjectile
     [SerializeField] BlockPicker blockPicker;
     public float Power => power;
     public float Speed => speed;
+    [Header("FX")]
+    [SerializeField] GameObject[] explosionPrefabs;
 
     private void Start()
     {
@@ -51,8 +54,18 @@ public class TankProjectile : MonoBehaviour, IProjectile
         {
             item.Key.Hit(item.Value, dir, collision.contacts[0].point);
         }
+        DestroyProjectile();
+    }
+
+    void DestroyProjectile()
+    {
+        CreateDestructionFX();
         Destroy(gameObject);
     }
 
-
+    void CreateDestructionFX()
+    {
+        GameObject fx_go = MonoUtils.InstanciateRandom(explosionPrefabs, transform.position, Quaternion.identity);
+        Destroy(fx_go, 5);
+    }
 }

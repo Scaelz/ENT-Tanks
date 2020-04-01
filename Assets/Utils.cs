@@ -31,7 +31,6 @@ public static class Utils
         obj.gameObject.SetActive(false);
     }
 
-
     public static void PlayRandomSound(AudioSource source, AudioClip[] audioClipsArray, float volume = 1, float pitch = 1)
     {
         if (audioClipsArray.Length > 0)
@@ -42,5 +41,14 @@ public static class Utils
             source.pitch = pitch;
             source.Play();
         }
+    }
+}
+
+public class MonoUtils: MonoBehaviour
+{
+    public static GameObject InstanciateRandom(GameObject[] gameObjects, Vector3 position, Quaternion rotation)
+    {
+        int index = Random.Range(0, gameObjects.Length);
+        return Instantiate(gameObjects[index], position, rotation);
     }
 }

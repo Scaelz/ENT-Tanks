@@ -3884,7 +3884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudioClips: []
-  hitEffectsPrefab: []
+  hitEffectsPrefab:
+  - {fileID: 1121192042590650, guid: 4e7d883b216e85245b83d33122275249, type: 3}
   vfxSpawnPoint: {fileID: 0}
   minDestructionForce: 30
   maxDestructionForce: 40
