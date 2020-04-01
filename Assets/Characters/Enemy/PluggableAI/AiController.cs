@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiController : MonoBehaviour
+public class AiController : MonoBehaviour, IController
 {
     [SerializeField] State currentState;
     [SerializeField] State remainState;
@@ -32,6 +32,12 @@ public class AiController : MonoBehaviour
             }
         }
     }
+
+    public ControlType TypeOfControl => throw new System.NotImplementedException();
+
+    IMoveable IController.Movement => throw new System.NotImplementedException();
+
+    IShooter IController.Shooting => throw new System.NotImplementedException();
 
     public Vector3 GetLastSeenPosition()
     {
