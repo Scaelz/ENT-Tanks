@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(AudioSource))]
 public class Brick : Block, IHitable
 {
     [Header("Destruction properties")]
@@ -14,9 +13,11 @@ public class Brick : Block, IHitable
     [SerializeField] LayerMask collisionLayer;
     Rigidbody[] rigidbodies;
 
+
     private void Start()
     {
         rigidbodies = GetComponentsInChildren<Rigidbody>();
+
     }
 
     public override void Hit(List<Collider> colliders, Vector3 hitDirection, Vector3 hitPoint)
@@ -28,9 +29,11 @@ public class Brick : Block, IHitable
             rb.gameObject.layer = Utils.GetLayerMaskInt(collisionLayer);
             SetupExplosion(rb, hitDirection);
             GetRidOfBrokenParts(rb);
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/explosion");
+
+
         }
-        Utils.PlayRandomSound(audioSource, hitAudioClips);
-        InstanciateHitEffect(hitPoint);
     }
 
     void InstanciateHitEffect(Vector3 spawnPoint)

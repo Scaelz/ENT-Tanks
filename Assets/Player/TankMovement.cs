@@ -13,6 +13,13 @@ public class TankMovement : MonoBehaviour
     public string moveSound;
     FMOD.Studio.EventInstance moveSoundEv;
 
+
+    [SerializeField]
+    [Range(0f, 1000f)]
+    public float rpm;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +33,8 @@ public class TankMovement : MonoBehaviour
         rb.AddForce(movement);
         //rb.MovePosition(transform.position + movement);
 
+        moveSoundEv.setParameterByName("RPM", rpm);
+        
     }
 
     public void Turn(float input_horizontal, float input_vertical)
@@ -40,4 +49,11 @@ public class TankMovement : MonoBehaviour
     {
         rb.MoveRotation(quaternion);
     }
+
+    //public void Update()
+    //{
+       
+    //    moveSoundEv.setParameterByName("RPM", rpm);
+       
+    //}
 }

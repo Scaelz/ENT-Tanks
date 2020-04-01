@@ -1742,6 +1742,11 @@ PrefabInstance:
       propertyPath: moveSound
       value: event:/tank_engine
       objectReference: {fileID: 0}
+    - target: {fileID: 7412337632578798629, guid: 2305ba2f8444b404aad0f8751a5e2ef2,
+        type: 3}
+      propertyPath: rpm
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7412337632578798630, guid: 2305ba2f8444b404aad0f8751a5e2ef2,
         type: 3}
       propertyPath: m_IsKinematic
@@ -6834,6 +6839,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
         type: 3}
+    - target: {fileID: 1016490687034328442, guid: 84154e5fff22c274f8a7a69c98bc015e,
+        type: 3}
+      propertyPath: explosionSound
+      value: event:/explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016490687034328443, guid: 84154e5fff22c274f8a7a69c98bc015e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1016490687129784800, guid: 84154e5fff22c274f8a7a69c98bc015e,
         type: 3}
       propertyPath: m_Mass
@@ -6919,7 +6934,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1016490687034328443, guid: 84154e5fff22c274f8a7a69c98bc015e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84154e5fff22c274f8a7a69c98bc015e, type: 3}
 --- !u!1001 &1567521140
 PrefabInstance:
