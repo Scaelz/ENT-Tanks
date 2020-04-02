@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Bonus.meta
 guid: 982c6b3f8c7b7314e88d9b502519c495
+=======
+guid: 17217c5618eae7749a256782a34966b0
+>>>>>>> c4218445e763cee1a80aa2da34dcf8d2c161dde3:Assets/StreamingAssets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
