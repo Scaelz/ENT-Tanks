@@ -15,6 +15,8 @@ public class TankProjectile : MonoBehaviour, IProjectile
     public float Speed => speed;
     [Header("FX")]
     [SerializeField] GameObject[] explosionPrefabs;
+    [SerializeField] AudioClip[] explosionSounds;
+    [SerializeField] float volume, pitch;
 
     private void Start()
     {
@@ -60,7 +62,20 @@ public class TankProjectile : MonoBehaviour, IProjectile
     void DestroyProjectile()
     {
         CreateDestructionFX();
+        PlayAudioClip(explosionSounds[Random.Range(0, explosionSounds.Length)], transform.position, volume, pitch);
         Destroy(gameObject);
+    }
+
+    void PlayAudioClip(AudioClip clip, Vector3 position, float volume=1, float pitch=1)
+    {
+        var go = new GameObject("One shot audio");
+        go.transform.position = position;
+        AudioSource source = go.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.volume = volume;
+        source.pitch = pitch;
+        source.Play();
+        Destroy(go, clip.length);
     }
 
     void CreateDestructionFX()

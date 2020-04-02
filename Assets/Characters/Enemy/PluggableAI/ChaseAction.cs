@@ -13,7 +13,7 @@ public class ChaseAction : AiAction
 
     void Chase(AiController controller)
     {
-        controller.Movement.Agent.stoppingDistance = chaseDistance;
+        //controller.Movement.Agent.stoppingDistance = chaseDistance;
         controller.Movement.MoveTo(controller.GetTargetPosition());
         controller.TrackPlayer(true);
         controller.SavePlayerPosition();

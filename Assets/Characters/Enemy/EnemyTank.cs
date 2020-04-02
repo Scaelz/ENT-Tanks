@@ -70,7 +70,7 @@ public class EnemyTank : MonoBehaviour
     {
         if (!CheckForObsticle(transform.forward, frontObsticleRadars))
         {
-            movement.Move(1);
+            //movement.Move(1);
         }
         else
         {

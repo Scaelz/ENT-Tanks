@@ -131,6 +131,15 @@ MonoBehaviour:
   blockPicker: {fileID: 2050762905}
   explosionPrefabs:
   - {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  explosionSounds:
+  - {fileID: 8300000, guid: 4b098ab48e59991499ec784386fbb053, type: 3}
+  - {fileID: 8300000, guid: 1d660f89ebfd75a439bea2b1c05f925c, type: 3}
+  - {fileID: 8300000, guid: 9f74cd8b8a56d8c4fa6d1a9344b2e364, type: 3}
+  - {fileID: 8300000, guid: e05b00137e1d6ba449a829d3f18a1459, type: 3}
+  - {fileID: 8300000, guid: b1785134a22cba24baafbe48d2cb55d4, type: 3}
+  - {fileID: 8300000, guid: 3dd352a7af5062e4ca47e53a4fcd9621, type: 3}
+  volume: 0.58
+  pitch: 1.7
 --- !u!1 &8298444892766662750
 GameObject:
   m_ObjectHideFlags: 0

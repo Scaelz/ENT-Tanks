@@ -5,10 +5,9 @@ using UnityEngine;
 public interface IMoveable
 {
     float Speed { get; }
-    float TurnSpeed { get; }
 
-    void Turn(Quaternion angle, float turnSpeed);
-    void Turn(float verticalInput, float horizontalInput);
-    void Move(float inputValue);
-    void Stop();
+    void MoveTo(Vector3 destination);
+    void StopMoving();
+    bool IsMoving();
+    void Turn(Vector3 direction);
 }

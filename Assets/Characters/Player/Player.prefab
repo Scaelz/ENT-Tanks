@@ -132,7 +132,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1743465396599816960, guid: 3ab7aff7fe07ad54da1ab9d55ea099ec,
     type: 3}
   muzzle: {fileID: 8458231453096691230}
-  shootPower: 1200
+  shootPower: 12
   recoilPower: 0
   reloadSpeed: 1
   cabinTransform: {fileID: 2378217002387136706}

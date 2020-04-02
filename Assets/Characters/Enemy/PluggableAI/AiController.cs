@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiController : MonoBehaviour, IController
+public class AiController : MonoBehaviour
 {
     [SerializeField] State currentState;
     [SerializeField] State remainState;
     [SerializeField] float actionTime;
     float timer;
 
-    [SerializeField] EnemyMovement movement;
-    public EnemyMovement Movement => movement;
+    [SerializeField] IMoveable movement;
+    public IMoveable Movement => movement;
     [SerializeField] TankShoot shooting;
     public TankShoot Shooting => shooting;
     bool trackPlayer;
@@ -33,11 +33,12 @@ public class AiController : MonoBehaviour, IController
         }
     }
 
-    public ControlType TypeOfControl => throw new System.NotImplementedException();
+    private void Start()
+    {
+        movement = GetComponent<IMoveable>();
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
-    IMoveable IController.Movement => throw new System.NotImplementedException();
-
-    IShooter IController.Shooting => throw new System.NotImplementedException();
 
     public Vector3 GetLastSeenPosition()
     {
@@ -67,11 +68,6 @@ public class AiController : MonoBehaviour, IController
     public Vector3 GetNextSpot()
     {
         return patrolRoute[patrolIndex].position;
-    }
-
-    private void Start()
-    {
-        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()

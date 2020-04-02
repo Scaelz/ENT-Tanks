@@ -3883,10 +3883,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1d3ed017107ab4badf84cfd16fc0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudioClips: []
   hitEffectsPrefab:
   - {fileID: 1121192042590650, guid: 4e7d883b216e85245b83d33122275249, type: 3}
   vfxSpawnPoint: {fileID: 0}
+  hitAudioClips:
+  - {fileID: 8300000, guid: cdbdb52bbd47432448e26be0e18372fa, type: 3}
+  - {fileID: 8300000, guid: 3210bc825ab590d4dbd7792780e6b8c0, type: 3}
+  - {fileID: 8300000, guid: 9f01daa96c4818a4fbe45f7ebeb35a9c, type: 3}
+  - {fileID: 8300000, guid: 884a581a3d7d04d498904df09e9bfac1, type: 3}
+  - {fileID: 8300000, guid: 2c11fdda0a6273f4186e7454206e18df, type: 3}
+  - {fileID: 8300000, guid: 234031f2f962c874d8bf87817df82840, type: 3}
   minDestructionForce: 30
   maxDestructionForce: 40
   brokenPartsLifeTime: 1.2
@@ -3903,8 +3909,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: e05b00137e1d6ba449a829d3f18a1459, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

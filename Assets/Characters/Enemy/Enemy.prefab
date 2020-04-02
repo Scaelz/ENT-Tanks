@@ -171,11 +171,7 @@ MonoBehaviour:
   actionTime: 1
   movement: {fileID: 4281370338412900152}
   shooting: {fileID: 4281370338412900155}
-  patrolRoute:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  patrolRoute: []
   patrolIndex: 0
 --- !u!195 &4281370338412900153
 NavMeshAgent:
@@ -223,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a0bc9d079bf324988ee2a9fa38f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1743465396599816960, guid: 3ab7aff7fe07ad54da1ab9d55ea099ec,
+  projectilePrefab: {fileID: 6479019568588644601, guid: 7a1d3063a88f897449506d7a48512482,
     type: 3}
   muzzle: {fileID: 2639799553380433853}
   shootPower: 1200
@@ -258,6 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosions:
   - {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  shieldSystem: {fileID: 7261895505026607431}
+  shiledParticlesCount: 0
 --- !u!1 &4961855454314494450
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.293
       objectReference: {fileID: 0}
     - target: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -757,6 +755,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08416896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.08416896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.08416896
+      objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 0316e5bdbfdc1e541a9b072416325bc8,
         type: 3}
       propertyPath: playOnAwake
@@ -767,6 +777,12 @@ PrefabInstance:
 --- !u!4 &7352769879504916409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4388947112716342, guid: 0316e5bdbfdc1e541a9b072416325bc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7351526637323839375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7261895505026607431 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198917022394846920, guid: 0316e5bdbfdc1e541a9b072416325bc8,
     type: 3}
   m_PrefabInstance: {fileID: 7351526637323839375}
   m_PrefabAsset: {fileID: 0}

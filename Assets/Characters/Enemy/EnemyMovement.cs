@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IMoveable
 {
     NavMeshAgent agent;
     public NavMeshAgent Agent => agent;
+    public float Speed => agent.speed;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -31,5 +33,10 @@ public class EnemyMovement : MonoBehaviour
     public void StopMoving()
     {
         agent.isStopped = true;
+    }
+
+    public void Turn(Vector3 direction)
+    {
+        throw new System.NotImplementedException();
     }
 }

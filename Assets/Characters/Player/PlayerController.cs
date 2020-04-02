@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour, IController
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Movement.Move(v);
-        Movement.Turn(h, v);
+        Movement.MoveTo(transform.forward * v);
+        Movement.Turn(new Vector3 (h, v));
     }
 
     void AimAtCursor()

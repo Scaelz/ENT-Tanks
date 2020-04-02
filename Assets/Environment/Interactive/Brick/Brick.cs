@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(AudioSource))]
+
 public class Brick : Block, IHitable
 {
     [Header("Destruction properties")]
@@ -17,7 +17,7 @@ public class Brick : Block, IHitable
     private void Start()
     {
         rigidbodies = GetComponentsInChildren<Rigidbody>();
-        Debug.Log(hitEffectsPrefab.Length);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Hit(List<Collider> colliders, Vector3 hitDirection, Vector3 hitPoint)
@@ -36,7 +36,6 @@ public class Brick : Block, IHitable
 
     void InstanciateHitEffect(Vector3 spawnPoint)
     {
-        Debug.Log(hitEffectsPrefab.Length);
         if (hitEffectsPrefab.Length > 0)
         {
             GameObject vfxPrefab = hitEffectsPrefab[Random.Range(0, hitEffectsPrefab.Length)];
@@ -44,7 +43,6 @@ public class Brick : Block, IHitable
             GameObject vfxGo = Instantiate(vfxPrefab, spawnPoint, Quaternion.identity);
             ParticleSystem particleSystem = vfxGo.GetComponent<ParticleSystem>();
             particleSystem.Play();
-            Debug.Log(vfxGo);
         }
     }
 

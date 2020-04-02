@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(TankHealth))]
+[RequireComponent(typeof(TankHealth), typeof(AudioSource), typeof(TankShoot))]
 public class TankEffects : MonoBehaviour
 {
     [Header("Visual effects")]
@@ -11,8 +11,14 @@ public class TankEffects : MonoBehaviour
     TankHealth tankHealth;
     [SerializeField] ParticleSystem shieldSystem;
     [SerializeField] float shiledParticlesCount;
+    [Header("Sound effects")]
+    [SerializeField] AudioClip[] destructionSounds;
+    [SerializeField] AudioClip[] shootingSounds;
+    AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         tankHealth = GetComponent<TankHealth>();
         tankHealth.OnGotKilled += PlayRandomExplosion;
         tankHealth.OnShieldStateChanged += ShieldState;

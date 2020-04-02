@@ -14,7 +14,7 @@ public class SearchAction : AiAction
 
     void Search(AiController controller)
     {
-        controller.Movement.Agent.stoppingDistance = 0;
+        //controller.Movement.Agent.stoppingDistance = 0;
         Vector3 lastSeenAt = controller.GetLastSeenPosition();
         controller.Movement.MoveTo(lastSeenAt);
         if (!controller.Movement.IsMoving())

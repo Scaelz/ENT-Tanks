@@ -14,7 +14,7 @@ public class PatrolAction : AiAction
 
     void Patrol(AiController controller)
     {
-        controller.Movement.Agent.stoppingDistance = 0;
+        //controller.Movement.Agent.stoppingDistance = 0;
         controller.Movement.MoveTo(controller.GetNextSpot());
         controller.Shooting.ResetMuzzle();
         if (!controller.Movement.IsMoving())
