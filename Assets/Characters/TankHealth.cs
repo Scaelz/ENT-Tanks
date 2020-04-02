@@ -11,14 +11,25 @@ public class TankHealth : MonoBehaviour, IKillable
     [SerializeField] float armor;
     public float Armor => armor;
     public event Action OnGotKilled;
-    public event Action<bool> OnGotHit;
+    public event Action<float> OnGotHit;
+    public event Action<bool> OnShieldStateChanged;
+
+
+    private void Update()
+    {
+        
+    }
 
     public void Damage(float value)
     {
-        OnGotHit?.Invoke(IsShielded());
+        OnGotHit?.Invoke(value);
         if (IsShielded())
         {
             value = DamageShield(value);
+        }
+        if (!IsShielded())
+        {
+            OnShieldStateChanged?.Invoke(false);
         }
         health -= value;
         if(health <= 0)

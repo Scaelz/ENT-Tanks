@@ -9,11 +9,13 @@ public class TankEffects : MonoBehaviour
     [Header("Visual effects")]
     [SerializeField] GameObject[] explosions;
     TankHealth tankHealth;
-
+    [SerializeField] ParticleSystem shieldSystem;
+    [SerializeField] float shiledParticlesCount;
     private void Start()
     {
         tankHealth = GetComponent<TankHealth>();
         tankHealth.OnGotKilled += PlayRandomExplosion;
+        tankHealth.OnShieldStateChanged += ShieldState;
     }
 
     void PlayRandomExplosion()
@@ -25,4 +27,21 @@ public class TankEffects : MonoBehaviour
         Destroy(ps.gameObject, 5);
     }
 
+    void ShieldState(bool state)
+    {
+        if (state)
+        {
+            shieldSystem.Play();
+        }
+        else
+        {
+            shieldSystem.Stop();
+        }
+    }
+
+    void UpdateShield(float value)
+    {
+        var emission = shieldSystem.emission;
+        emission.rateOverTime = Mathf.Clamp(value, 0, shiledParticlesCount);
+    }
 }
