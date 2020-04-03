@@ -5,24 +5,41 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] float sceneSwapDelay;
+    bool GameStarted = false;
+
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
     PlayersEagle playersEagle;
+    CameraSetup cameraSetup;
 
     private void Start()
     {
+        cameraSetup = FindObjectOfType<CameraSetup>();
         playersEagle = FindObjectOfType<PlayersEagle>();
         playersEagle.OnEagleDead += EndGame;
     }
 
-
-    public static void StartGame()
+    private void Update()
     {
-        OnGameStarted?.Invoke();
+        if (!GameStarted)
+        {
+            if (cameraSetup.CameraSet)
+            {
+                StartGame();
+            }
+        }
     }
 
-    public static void EndGame()
+    public void StartGame()
+    {
+        OnGameStarted?.Invoke();
+        GameStarted = true;
+    }
+
+    public void EndGame()
     {
         OnGameEnded?.Invoke();
+        FindObjectOfType<LevelChanger>().DelayedFadeToLevel(0, sceneSwapDelay);
     }
 }

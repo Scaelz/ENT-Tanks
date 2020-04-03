@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CameraSetup : MonoBehaviour
 {
+    public bool CameraSet { get; private set; }
+
     public void SetupEnded()
     {
-        GameController.StartGame();
+        CameraSet = true;
     }
 }
