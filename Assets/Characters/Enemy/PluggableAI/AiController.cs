@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AiController : MonoBehaviour
@@ -37,6 +38,7 @@ public class AiController : MonoBehaviour
     {
         movement = GetComponent<IMoveable>();
         playerController = FindObjectOfType<PlayerController>();
+        GetRouteMarks();
     }
 
 
@@ -58,6 +60,19 @@ public class AiController : MonoBehaviour
     public void TrackPlayer(bool state)
     {
         trackPlayer = state;
+    }
+
+    void GetRouteMarks()
+    {
+        var marks = GameObject.FindGameObjectsWithTag("RouteMark");
+        int count = marks.Length;
+        patrolRoute = new Transform[count];
+        for (int i = 0; i < count; i++)
+        {
+            patrolRoute[i] = marks[i].transform;
+        }
+        System.Random rand = new System.Random();
+        patrolRoute = patrolRoute.OrderBy(x => rand.Next()).ToArray();
     }
 
     public int GetRouteLength()
