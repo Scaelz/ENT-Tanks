@@ -19,6 +19,15 @@ public class SpawnBonus : MonoBehaviour
         }
     }
 
+    public void OnAddTankHealth(TankHealth tankHealth)
+    {
+        tankHealth.OnSpawnBonus += SpawnObjectWithChance;
+    }
+    public void OnRemoveTankHealth(TankHealth tankHealth)
+    {
+        tankHealth.OnSpawnBonus -= SpawnObjectWithChance;
+    }
+
     private void MinMaxPosition()
     {
         maxX = transform.position.x + transform.localScale.x / 2;
@@ -27,20 +36,11 @@ public class SpawnBonus : MonoBehaviour
         minZ = transform.position.z - transform.localScale.z / 2;
     }
 
-    void Update()
+    public void SpawnObjectWithChance()
     {
-        SpawnObjectWithChance();
-    }
-
-    private void SpawnObjectWithChance()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            randomNumber = Random.Range(0, 100);
-            if (randomNumber >= chanceToSpawn) return;
-
-            SpawnBonusWithChance();
-        }
+        randomNumber = Random.Range(0, 100);
+        if (randomNumber >= chanceToSpawn) return;
+        SpawnBonusWithChance();
     }
 
     public void SpawnBonusWithChance()

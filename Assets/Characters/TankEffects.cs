@@ -33,7 +33,7 @@ public class TankEffects : MonoBehaviour
         Destroy(ps.gameObject, 5);
     }
 
-    void ShieldState(bool state)
+    public void ShieldState(bool state)
     {
         if (state)
         {
