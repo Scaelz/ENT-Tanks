@@ -56,7 +56,7 @@ public class TankEffects : MonoBehaviour
         Utils.PlayRandomSound(audioSource, hitSounds, volume);
     }
 
-    void ShieldState(bool state)
+    public void ShieldState(bool state)
     {
         if (state)
         {

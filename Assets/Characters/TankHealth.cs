@@ -11,9 +11,17 @@ public class TankHealth : MonoBehaviour, IKillable
     [SerializeField] float armor;
     public float Armor => armor;
     public event Action OnGotKilled;
+    public event Action OnSpawnBonus;
     public event Action<float> OnGotHit;
     public event Action<bool> OnShieldStateChanged;
 
+    public void SetArmor(float value) { armor = value; }
+    public void SetHealth(float value) { health = value; }
+
+    private void Start()
+    {
+        FindObjectOfType<SpawnBonus>().OnAddTankHealth(this);
+    }
 
     private void Update()
     {
@@ -57,6 +65,10 @@ public class TankHealth : MonoBehaviour, IKillable
     public void KillThis()
     {
         OnGotKilled?.Invoke();
+        if (gameObject.GetComponent<EnemyMovement>() != null)
+        {
+            OnSpawnBonus?.Invoke();
+        }
         Destroy(gameObject);
     }
 
