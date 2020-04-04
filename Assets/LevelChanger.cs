@@ -13,13 +13,30 @@ public class LevelChanger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            FadeToNextLevel();
+            //FadeToLevel(3);
         }
     }
 
     public void FadeToNextLevel()
     {
         FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void DelayedFadeToLevel(int indexLevel, float delay)
+    {
+        StartCoroutine(DelayedSceneChange(indexLevel, delay));
+    }
+
+    public void DelayedFadeToNextLevel(float delay)
+    {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(DelayedSceneChange(SceneManager.GetActiveScene().buildIndex + 1, delay));
+    }
+
+    IEnumerator DelayedSceneChange(int indexLevel, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        FadeToLevel(indexLevel);
     }
 
     public void FadeToLevel(int indexLevel)
