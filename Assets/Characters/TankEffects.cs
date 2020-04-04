@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(TankHealth), typeof(AudioSource))]
+[RequireComponent(typeof(TankHealth), typeof(AudioSource), typeof(TankShoot))]
 public class TankEffects : MonoBehaviour
 {
     [Header("Visual effects")]
     [SerializeField] GameObject[] explosions;
     TankHealth tankHealth;
-    TankShoot tankShoot;
     [SerializeField] ParticleSystem shieldSystem;
     [SerializeField] float shiledParticlesCount;
     [Header("Sound effects")]
-    float volume = 1;
     [SerializeField] AudioClip[] destructionSounds;
-    [SerializeField] AudioClip[] hitSounds;
     [SerializeField] AudioClip[] shootingSounds;
     AudioSource audioSource;
 
@@ -23,17 +20,8 @@ public class TankEffects : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         tankHealth = GetComponent<TankHealth>();
-        tankShoot = GetComponent<TankShoot>();
         tankHealth.OnGotKilled += PlayRandomExplosion;
         tankHealth.OnShieldStateChanged += ShieldState;
-        tankHealth.OnGotHit += HitHandler;
-        tankHealth.OnGotKilled += DestructionHandler;
-        tankShoot.OnShoot += ShootHandler;
-    }
-
-    void ShootHandler(Vector3 dir, Vector3 from)
-    {
-        Utils.PlayRandomSound(audioSource, shootingSounds);
     }
 
     void PlayRandomExplosion()
@@ -45,18 +33,7 @@ public class TankEffects : MonoBehaviour
         Destroy(ps.gameObject, 5);
     }
 
-    void DestructionHandler()
-    {
-        AudioClip clip = destructionSounds[Random.Range(0, destructionSounds.Length)];
-        MonoUtils.PlayAudioClip(clip, transform.position, volume);
-    }
-
-    void HitHandler(float value)
-    {
-        Utils.PlayRandomSound(audioSource, hitSounds, volume);
-    }
-
-    void ShieldState(bool state)
+    public void ShieldState(bool state)
     {
         if (state)
         {

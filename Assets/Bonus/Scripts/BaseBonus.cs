@@ -5,13 +5,14 @@ using UnityEngine;
 public abstract class BaseBonus : MonoBehaviour
 {
     [SerializeField] float timeToDeath;
+    [SerializeField] GameObject meshObject;
 
     void Update()
     {
         timeToDeath -= Time.deltaTime;
         if (timeToDeath <= 0)
         {
-            Destroy(gameObject);
+            HideBonus();
         }
     }
     private void OnTriggerEnter(Collider collider)
@@ -21,8 +22,17 @@ public abstract class BaseBonus : MonoBehaviour
         {
             // Player take bonus
             TakeBonus();
-            Destroy(gameObject);
+            timeToDeath = 0;
         }
     }
+
+    private void HideBonus()
+    {
+        if (meshObject != null) meshObject.SetActive(false);
+        // GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(gameObject, 25);
+    }
+
     public virtual void TakeBonus() { }
 }
