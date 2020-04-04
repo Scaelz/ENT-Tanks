@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour, IController
 
     public IShooter Shooting { get; private set; }
 
-
     // Start is called before the first frame update
     void Start()
     {

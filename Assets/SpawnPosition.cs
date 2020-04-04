@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpawnPosition : MonoBehaviour
 {
-    public bool idle = true;
-    public bool AiSpawn = true;
+    public bool idle;
     public Vector3 position;
 
     private void Start()

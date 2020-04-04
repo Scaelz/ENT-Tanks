@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f83378c6bb9554a95fc27a36415b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  power: 100
+  speed: 10
+  power: 15
   blockPickerGO: {fileID: 8298444892766662750}
   blockPicker: {fileID: 2050762905}
   explosionPrefabs:
