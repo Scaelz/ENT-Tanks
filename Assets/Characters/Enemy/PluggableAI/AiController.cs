@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AiController : MonoBehaviour
 {
+    [SerializeField] int score;
     [SerializeField] State currentState;
     [SerializeField] State remainState;
     [SerializeField] float actionTime;
@@ -127,5 +128,11 @@ public class AiController : MonoBehaviour
     void OnStateChanged()
     {
         timer = 0;
+    }
+
+    private void OnDestroy()
+    {
+        ScoreManager.AddScore(score);
+        EnemyCounter.EnemyKilled();
     }
 }

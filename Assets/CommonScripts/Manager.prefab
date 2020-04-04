@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3937587324114322529}
-  - component: {fileID: 3937587324114322530}
   - component: {fileID: 3937587324114322528}
   - component: {fileID: 3937587324114322535}
   - component: {fileID: 2386481396045145370}
@@ -38,23 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3937587324114322530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3937587324114322531}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef871ad7a27c2d4c9c11db2a95ebe23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 3852157831663109042, guid: da759d720938c7c4cbf9f816be38a351,
-    type: 3}
-  xSize: 22
-  zSize: 20
-  offset: 10.5
 --- !u!114 &3937587324114322528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e33ee5f2a2803442940dcae7a7574fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneSwapDelay: 1.5
 --- !u!1001 &3937587324092319532
 PrefabInstance:
   m_ObjectHideFlags: 0

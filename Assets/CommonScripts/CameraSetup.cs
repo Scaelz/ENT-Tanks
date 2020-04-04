@@ -10,4 +10,9 @@ public class CameraSetup : MonoBehaviour
     {
         CameraSet = true;
     }
+
+    public void PreventDoubleTrigger()
+    {
+        CameraSet = false;
+    }
 }

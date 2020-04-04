@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ObjectsSpawner : MonoBehaviour
 {
@@ -10,8 +12,11 @@ public class ObjectsSpawner : MonoBehaviour
     [SerializeField] SpawnPosition playerSpawn;
     int[] spawnsMade;
     SpawnPosition[] spawnPositions;
+    public event Action<PlayerController> OnPlayerSpawn;
 
-    int totalSpawnCount = 0;
+    public static int totalSpawnCount = 0;
+    public static event Action<int> OnSpawnCounted;
+
     [SerializeField] float spawnDelay;
     [SerializeField] float spawnFrequency;
     [SerializeField] bool isActive = true;
@@ -24,7 +29,18 @@ public class ObjectsSpawner : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         spawnPositions = FindObjectsOfType<SpawnPosition>();
         spawnsMade = new int[spawnInfo.Length];
+        GameController.OnGameStarted += CountAllSpawns;
         GameController.OnGameStarted += StartSpawn;
+    }
+
+    void CountAllSpawns()
+    {
+        totalSpawnCount = 0;
+        foreach (SpawnInfo info in spawnInfo)
+        {
+            totalSpawnCount += info.count;
+        }
+        OnSpawnCounted?.Invoke(totalSpawnCount);
     }
 
     private void Update()
@@ -35,6 +51,10 @@ public class ObjectsSpawner : MonoBehaviour
             if (timer > spawnFrequency)
             {
                 timer = 0;
+                if(spawnInfo.Length == 0)
+                {
+                    return;
+                }
                 StartCoroutine(Spawn());
                 UpdateSpawnArray();
             }
@@ -65,12 +85,12 @@ public class ObjectsSpawner : MonoBehaviour
             yield break;
         }
         SpawnPosition spawn = availableSpawn[Random.Range(0, availableSpawn.Length)];
+        spawnsMade[index]++;
         spawn.idle = false;
         StartCoroutine(RunVFX(spawn.position, spawnDelay, spawnEffect));
         yield return new WaitForSeconds(spawnDelay);
         Instantiate(info.prefab, spawn.position, Quaternion.identity);
         PlaySound();
-        spawnsMade[index]++;
         spawn.idle = true;
         
     }
@@ -90,8 +110,9 @@ public class ObjectsSpawner : MonoBehaviour
     IEnumerator SpawnPlayer(float time)
     {
         yield return new WaitForSeconds(time);
-        Instantiate(PlayerPrefab, playerSpawn.position, Quaternion.identity);
+        PlayerController player = Instantiate(PlayerPrefab, playerSpawn.position, Quaternion.identity).GetComponent<PlayerController>();
         PlaySound();
+        OnPlayerSpawn?.Invoke(player);
     }
 
     public void StartSpawn()
@@ -102,9 +123,13 @@ public class ObjectsSpawner : MonoBehaviour
 
     void SpawnPlayer()
     {
-        StartCoroutine(RunVFX(playerSpawn.position, spawnDelay, spawnEffect));
         StartCoroutine(SpawnPlayer(spawnDelay));
+        StartCoroutine(RunVFX(playerSpawn.position, spawnDelay, spawnEffect));
     }
 
+    private void OnDestroy()
+    {
+        OnSpawnCounted = null;
+    }
 
 }

@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287413f5478b5324a8b3b2fb3bfbe6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 150
   currentState: {fileID: 11400000, guid: 3e18dbeafc7fd9e43a4d02f80c429479, type: 2}
   remainState: {fileID: 11400000, guid: 7fe7134db73039e4f800f54107cbdcf7, type: 2}
   actionTime: 1

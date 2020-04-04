@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Options.unity
     guid: f1e3e2d302f8742469f32298a2258f66
+  - enabled: 1
+    path: Assets/Scenes/SpawZoneTest.unity
+    guid: baf9674c792c9ad4c9e01066e6cf88d8
+  - enabled: 1
+    path: Assets/Scenes/VFX Test.unity
+    guid: e52b0e94d1fbcaa4eb118ab8b4ccccfe
   m_configObjects: {}
