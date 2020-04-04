@@ -51,4 +51,17 @@ public class MonoUtils: MonoBehaviour
         int index = Random.Range(0, gameObjects.Length);
         return Instantiate(gameObjects[index], position, rotation);
     }
+
+    public static void PlayAudioClip(AudioClip clip, Vector3 position, float volume = 1, float pitch = 1)
+    {
+        var go = new GameObject("One shot audio");
+        go.transform.position = position;
+        AudioSource source = go.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.volume = volume;
+        source.pitch = pitch;
+        source.Play();
+        Destroy(go, clip.length);
+    }
 }
+
