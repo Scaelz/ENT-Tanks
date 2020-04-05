@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Actions/Patrol")]
 public class PatrolAction : AiAction
 {
-
-
     public override void Act(AiController controller)
     {
         Patrol(controller);

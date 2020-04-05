@@ -10,6 +10,7 @@ public class AiController : MonoBehaviour
     [SerializeField] State remainState;
     [SerializeField] float actionTime;
     float timer;
+    public bool PlayerInFov;
 
     [SerializeField] IMoveable movement;
     public IMoveable Movement => movement;
@@ -134,5 +135,22 @@ public class AiController : MonoBehaviour
     {
         ScoreManager.AddScore(score);
         EnemyCounter.EnemyKilled();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Debug.Log("IN THE TRIGGER");
+            PlayerInFov = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerInFov = false;
+        }
     }
 }
