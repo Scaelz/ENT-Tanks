@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267ad450a35eee545a072346082de162, type: 3}
   m_Name: PatrolAction
   m_EditorClassIdentifier: 
+  turnAngle: 45

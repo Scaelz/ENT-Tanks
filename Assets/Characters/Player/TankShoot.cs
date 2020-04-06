@@ -12,6 +12,8 @@ public class TankShoot : MonoBehaviour, IShooter
     [SerializeField] float recoilPower;
     [SerializeField] float reloadSpeed;
     [SerializeField] Transform cabinTransform;
+    [SerializeField] float cabinRotateSpeed;
+
     float reloadTimer;
     bool canShoot = true;
     Rigidbody rb;
@@ -26,6 +28,11 @@ public class TankShoot : MonoBehaviour, IShooter
         return cabinTransform.forward;
     }
 
+    public Vector3 GetCabinRotation()
+    {
+        return cabinTransform.localEulerAngles;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,14 +42,26 @@ public class TankShoot : MonoBehaviour, IShooter
     {
         var lookPos = aimPosition - transform.position;
         lookPos.y = 0;
-        var rotation = Quaternion.LookRotation(lookPos);
-        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, 5 * Time.deltaTime);
+        AimInDirection(lookPos);
+    }
+
+    public void AimInDirection(Vector3 dir, float rotateSpeed = 0)
+    {
+        if (rotateSpeed == 0)
+        {
+            rotateSpeed = cabinRotateSpeed;
+        }
+        float QuaternionAngle = Vector3.Angle(Muzzle.forward, dir);
+        float TSpeed = rotateSpeed / QuaternionAngle;
+
+        var rotation = Quaternion.LookRotation(dir);
+        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, TSpeed * Time.deltaTime);
     }
 
     public void ResetMuzzle()
     {
-        var rotation = Quaternion.LookRotation(transform.forward);
-        cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, 5 * Time.deltaTime);
+        //var rotation = Quaternion.LookRotation(transform.forward);
+        //cabinTransform.rotation = Quaternion.Slerp(cabinTransform.rotation, rotation, 5 * Time.deltaTime);
     }
 
     private void Update()

@@ -43,6 +43,10 @@ public class AiController : MonoBehaviour
         GetRouteMarks();
     }
 
+    public Vector3 GetForward()
+    {
+        return transform.forward;
+    }
 
     public Vector3 GetLastSeenPosition()
     {
@@ -141,7 +145,6 @@ public class AiController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("IN THE TRIGGER");
             PlayerInFov = true;
         }
     }
