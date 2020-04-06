@@ -16,4 +16,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3072
   rayRadius: 0.1
-  viewAngle: 90
+  viewAngle: 120
