@@ -6,6 +6,6 @@ public class BonusFreezeTime : BaseBonus
 {
     override public void TakeBonus()
     {
-        Debug.Log("Freeze All Enemy!!!");
+        FindObjectOfType<Fridge>().FreezeEnemies(5);
     }
 }

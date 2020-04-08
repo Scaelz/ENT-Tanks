@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class AiController : MonoBehaviour
     [SerializeField] int score;
     [SerializeField] State currentState;
     [SerializeField] State remainState;
+    [SerializeField] State freezeState;
     [SerializeField] float actionTime;
     float timer;
     public bool PlayerInFov;
@@ -21,6 +23,7 @@ public class AiController : MonoBehaviour
     [SerializeField] Transform[] patrolRoute;
     [SerializeField] int patrolIndex;
     Vector3 lastPlayerPosition;
+
     public int PatrolIndex
     {
         get
@@ -38,9 +41,23 @@ public class AiController : MonoBehaviour
 
     private void Start()
     {
+        if (Fridge.isOn)
+        {
+            Freeze(true);
+        }
+        Fridge.OnFreezeStateChanged += Freeze;
         movement = GetComponent<IMoveable>();
         playerController = FindObjectOfType<PlayerController>();
         GetRouteMarks();
+    }
+
+    void Freeze(bool state)
+    {
+        if (state)
+        {
+            TransitionToState(freezeState);
+        }
+        GetComponent<TankEffects>().FreezeEffect(state);
     }
 
     public Vector3 GetForward()
@@ -139,6 +156,7 @@ public class AiController : MonoBehaviour
     {
         ScoreManager.AddScore(score);
         EnemyCounter.EnemyKilled();
+        Fridge.OnFreezeStateChanged -= Freeze;
     }
 
     private void OnTriggerStay(Collider other)
