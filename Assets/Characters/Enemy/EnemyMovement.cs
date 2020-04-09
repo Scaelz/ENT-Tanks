@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour, IMoveable
     NavMeshAgent agent;
     public NavMeshAgent Agent => agent;
     public float Speed => agent.speed;
-
+    [SerializeField] float trunSpeed;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -37,6 +37,7 @@ public class EnemyMovement : MonoBehaviour, IMoveable
 
     public void Turn(Vector3 direction)
     {
-        throw new System.NotImplementedException();
+        var rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, trunSpeed);
     }
 }

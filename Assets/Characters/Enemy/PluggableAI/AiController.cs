@@ -110,6 +110,7 @@ public class AiController : MonoBehaviour
 
     private void Update()
     {
+
         if (trackPlayer)
         {
             Shooting.Aim(playerController.transform.position);
