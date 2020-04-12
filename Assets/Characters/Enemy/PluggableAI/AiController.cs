@@ -41,6 +41,7 @@ public class AiController : MonoBehaviour
 
     private void Start()
     {
+        PlayerInFov = true;
         if (Fridge.isOn)
         {
             Freeze(true);
@@ -160,19 +161,19 @@ public class AiController : MonoBehaviour
         Fridge.OnFreezeStateChanged -= Freeze;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            PlayerInFov = true;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = true;
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            PlayerInFov = false;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = false;
+    //    }
+    //}
 }

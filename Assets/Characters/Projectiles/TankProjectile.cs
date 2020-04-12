@@ -6,26 +6,36 @@ using UnityEngine;
 public class TankProjectile : MonoBehaviour, IProjectile
 {
     [Header("Basic properties")]
-    Rigidbody rb;
+    [SerializeField] Rigidbody rb;
+    [SerializeField] float explodeRadius;
+    [SerializeField] LayerMask explodeMask;
     [SerializeField] float speed;
     [SerializeField] float power;
-    [SerializeField] GameObject blockPickerGO;
-    [SerializeField] BlockPicker blockPicker;
     public float Power => power;
     public float Speed => speed;
-    [Header("FX")]
-    [SerializeField] GameObject[] explosionPrefabs;
-    [SerializeField] AudioClip[] explosionSounds;
-    [SerializeField] float volume, pitch;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    float destructionTimer = 0;
+    bool hitRegistered;
 
     public void SetSpeed(float speed)
     {
+        rb.velocity = Vector3.zero;
         this.speed = speed;
+    }
+
+    private void OnDisable()
+    {
+        rb.velocity = Vector3.zero;
+        hitRegistered = false;
+        destructionTimer = 0;
+    }
+
+    private void Update()
+    {
+        destructionTimer += Time.deltaTime;
+        if(destructionTimer >= 3)
+        {
+            ProjectilePool.Instance.ReturnToPool(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -36,40 +46,14 @@ public class TankProjectile : MonoBehaviour, IProjectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        Dictionary<IHitable, List<Collider>> dict = new Dictionary<IHitable, List<Collider>>();
-        Vector3 dir = -transform.forward;
-        dir = dir.normalized;
-        foreach (Collider item in blockPicker.GetDestructables())
+        if (!hitRegistered)
         {
-            IHitable block = item.gameObject.GetComponentInParent<IHitable>();
-            if (dict.ContainsKey(block))
-            {
-                dict[block].Add(item);
-            }
-            else
-            {
-                List<Collider> colliders = new List<Collider>();
-                colliders.Add(item);
-                dict.Add(block, colliders);
-            }
+            hitRegistered = true;
+            ProjectilePool.Instance.ReturnToPool(gameObject);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
+            DestructionSystem.DestructPieces(colliders);
+            ExplosionsPool.Instance.GetInstance(transform.position, Quaternion.identity).GetComponent<ProjectileDestructionEffects>().RunFX();
         }
-        foreach (KeyValuePair<IHitable, List<Collider>> item in dict)
-        {
-            item.Key.Hit(item.Value, dir, collision.contacts[0].point);
-        }
-        DestroyProjectile();
-    }
 
-    void DestroyProjectile()
-    {
-        CreateDestructionFX();
-        MonoUtils.PlayAudioClip(explosionSounds[Random.Range(0, explosionSounds.Length)], transform.position, volume, pitch);
-        Destroy(gameObject);
-    }
-
-    void CreateDestructionFX()
-    {
-        GameObject fx_go = MonoUtils.InstanciateRandom(explosionPrefabs, transform.position, Quaternion.identity);
-        Destroy(fx_go, 5);
     }
 }

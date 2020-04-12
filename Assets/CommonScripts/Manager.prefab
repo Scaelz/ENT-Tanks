@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 3937587324114322528}
   - component: {fileID: 3937587324114322535}
   - component: {fileID: 2386481396045145370}
+  - component: {fileID: 2075650935}
+  - component: {fileID: 2075650936}
+  - component: {fileID: 2075650937}
+  - component: {fileID: 2075650938}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -163,12 +167,72 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3937587324114322531}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e33ee5f2a2803442940dcae7a7574fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneSwapDelay: 1.5
+--- !u!114 &2075650935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937587324114322531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2270a136084cf48a5773d164b92080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1121192042590650, guid: 4e7d883b216e85245b83d33122275249, type: 3}
+  prewarmCount: 50
+--- !u!114 &2075650936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937587324114322531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4bc6a815627bb4ab037209b1afef45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 350154572545216681, guid: 4b44bfdd2fb57c04db00d6840fca77cc, type: 3}
+  prewarmCount: 50
+--- !u!114 &2075650937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937587324114322531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cf1e913ea96b64ebd6ed6bac4fb22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6479019568588644601, guid: 7a1d3063a88f897449506d7a48512482, type: 3}
+  prewarmCount: 50
+--- !u!114 &2075650938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937587324114322531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a08819bf3b0eef409f1aa2daec4a0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips: []
+  vfxPrefabs: []
+  brokenPiecesMask:
+    serializedVersion: 2
+    m_Bits: 512
+  decayTime: 2
 --- !u!1001 &3937587324092319532
 PrefabInstance:
   m_ObjectHideFlags: 0

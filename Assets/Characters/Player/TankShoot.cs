@@ -76,12 +76,10 @@ public class TankShoot : MonoBehaviour, IShooter
     {
         if (canShoot)
         {
-            GameObject go = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
-            TankProjectile projectile = go.GetComponent<TankProjectile>();
-            projectile.SetSpeed(shootPower);
+            canShoot = !canShoot;
+            GameObject go = ProjectilePool.Instance.GetInstance(muzzle.position, muzzle.rotation);
             OnShoot?.Invoke(Muzzle.forward, Muzzle.position);
             Recoil();
-            canShoot = !canShoot;
         }
     }
 
