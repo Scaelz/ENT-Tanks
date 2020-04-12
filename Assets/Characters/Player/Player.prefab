@@ -139,6 +139,7 @@ MonoBehaviour:
   recoilPower: 0
   reloadSpeed: 1
   cabinTransform: {fileID: 2378217002387136706}
+  cabinRotateSpeed: 35
 --- !u!114 &6112154993567843063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d402a6346410344b8e220c073b388c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 1
   typeOfControl: 0
 --- !u!114 &5013481935077397470
 MonoBehaviour:
@@ -278,6 +282,7 @@ MonoBehaviour:
   - {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   shieldSystem: {fileID: 8939589518940048329}
   shiledParticlesCount: 0
+  iceCubePrefab: {fileID: 0}
   destructionSounds:
   - {fileID: 8300000, guid: 4b098ab48e59991499ec784386fbb053, type: 3}
   - {fileID: 8300000, guid: 1d660f89ebfd75a439bea2b1c05f925c, type: 3}

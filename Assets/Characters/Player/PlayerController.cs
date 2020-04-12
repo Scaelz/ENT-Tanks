@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IController
 { 
     Rigidbody rb;
-    [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask aimMask;
     [SerializeField] ControlType typeOfControl;
     public ControlType TypeOfControl { get => typeOfControl; private set => typeOfControl = value; }
 
@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour, IController
     void AimAtCursor()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, mask))
+        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, aimMask))
         {
+            Debug.Log("hit");
             Shooting.Aim(hit.point);
         }
     }

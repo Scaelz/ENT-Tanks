@@ -170,7 +170,9 @@ MonoBehaviour:
   score: 150
   currentState: {fileID: 11400000, guid: 3e18dbeafc7fd9e43a4d02f80c429479, type: 2}
   remainState: {fileID: 11400000, guid: 7fe7134db73039e4f800f54107cbdcf7, type: 2}
+  freezeState: {fileID: 0}
   actionTime: 1
+  PlayerInFov: 0
   shooting: {fileID: 4281370338412900155}
   patrolRoute: []
   patrolIndex: 0
@@ -208,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c2a644a9506844c880679885eb0195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trunSpeed: 0
 --- !u!114 &4281370338412900155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,10 +226,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6479019568588644601, guid: 7a1d3063a88f897449506d7a48512482,
     type: 3}
   muzzle: {fileID: 2639799553380433853}
-  shootPower: 1
+  shootPower: 0.75
   recoilPower: 0
-  reloadSpeed: 1
+  reloadSpeed: 1.2
   cabinTransform: {fileID: 6344522175741802796}
+  cabinRotateSpeed: 35
 --- !u!114 &4152733602647284737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +261,7 @@ MonoBehaviour:
   - {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   shieldSystem: {fileID: 7261895505026607431}
   shiledParticlesCount: 0
+  iceCubePrefab: {fileID: 0}
   destructionSounds:
   - {fileID: 8300000, guid: 4b098ab48e59991499ec784386fbb053, type: 3}
   - {fileID: 8300000, guid: 1d660f89ebfd75a439bea2b1c05f925c, type: 3}
