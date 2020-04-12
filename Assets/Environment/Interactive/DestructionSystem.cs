@@ -37,7 +37,6 @@ public class DestructionSystem : MonoBehaviour
             Instance.StartCoroutine(Instance.DecayPieces(rigidbody.gameObject, Instance.decayTime));
         }
         center /= colliders.Length;
-        Debug.Log($"Center {center}");
         GameObject go = DestructionFXPool.Instance.GetInstance(center, Quaternion.identity);
         go.GetComponent<ParticleSystem>().Play();
         Instance.StartCoroutine(Instance.DecayPieces(go, Instance.decayTime * 2));

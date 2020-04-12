@@ -78,6 +78,7 @@ public class TankShoot : MonoBehaviour, IShooter
         {
             canShoot = !canShoot;
             GameObject go = ProjectilePool.Instance.GetInstance(muzzle.position, muzzle.rotation);
+            go.layer = gameObject.layer;
             OnShoot?.Invoke(Muzzle.forward, Muzzle.position);
             Recoil();
         }

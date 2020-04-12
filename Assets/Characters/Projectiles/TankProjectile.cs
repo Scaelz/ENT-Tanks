@@ -51,6 +51,10 @@ public class TankProjectile : MonoBehaviour, IProjectile
             hitRegistered = true;
             ProjectilePool.Instance.ReturnToPool(gameObject);
             Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
+            if(colliders.Length == 0)
+            {
+                return;
+            }
             DestructionSystem.DestructPieces(colliders);
             ExplosionsPool.Instance.GetInstance(transform.position, Quaternion.identity).GetComponent<ProjectileDestructionEffects>().RunFX();
         }

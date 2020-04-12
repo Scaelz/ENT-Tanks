@@ -114,7 +114,10 @@ public class AiController : MonoBehaviour
 
         if (trackPlayer)
         {
-            Shooting.Aim(playerController.transform.position);
+            if(playerController != null)
+            {
+                Shooting.Aim(playerController.transform.position);
+            }
         }
         currentState.UpdateState(this);
     }
