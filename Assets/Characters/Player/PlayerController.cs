@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour, IController
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, aimMask))
         {
-            Debug.Log("hit");
             Shooting.Aim(hit.point);
         }
     }

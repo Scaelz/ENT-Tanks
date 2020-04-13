@@ -87,12 +87,12 @@ public class ObjectsSpawner : MonoBehaviour
         SpawnPosition spawn = availableSpawn[Random.Range(0, availableSpawn.Length)];
         spawnsMade[index]++;
         spawn.idle = false;
-        StartCoroutine(RunVFX(spawn.position, spawnDelay, spawnEffect));
+        spawn.RunPrepare();
         yield return new WaitForSeconds(spawnDelay);
-        Instantiate(info.prefab, spawn.position, Quaternion.identity);
+        EnemyPool.Instance.GetInstance(spawn.position, Quaternion.identity);
+        //Instantiate(info.prefab, spawn.position, Quaternion.identity);
+        spawn.RunSpawn();
         PlaySound();
-        spawn.idle = true;
-        
     }
 
     void PlaySound()

@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour
 
     void GoToNextLevel()
     {
-        Debug.Log($"GameStarted {GameStarted}");
         if (GameStarted)
         {
             FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);

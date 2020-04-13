@@ -257,7 +257,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b4df455955de0784ea89f4f15cfc513d, type: 2}
+  - {fileID: 2100000, guid: 6cb468bc8cab8f348a35dc06f107a0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1519,6 +1519,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c49a8eb47d5968428ff00eae756eb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1720336026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720336015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90c1e12a0485144086ce6c0ea7a33f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4281370338412900158, guid: 3c833f058986f344881811330216dd83, type: 3}
+  prewarmCount: 10
 --- !u!1001 &1832850292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2009,6 +2023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneSwapDelay
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386481396045145370, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937587324114322528, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
         type: 3}

@@ -170,7 +170,7 @@ MonoBehaviour:
   score: 150
   currentState: {fileID: 11400000, guid: 3e18dbeafc7fd9e43a4d02f80c429479, type: 2}
   remainState: {fileID: 11400000, guid: 7fe7134db73039e4f800f54107cbdcf7, type: 2}
-  freezeState: {fileID: 0}
+  freezeState: {fileID: 11400000, guid: c3196143d8c549140a5ebcb16fe999ba, type: 2}
   actionTime: 1
   PlayerInFov: 0
   shooting: {fileID: 4281370338412900155}
