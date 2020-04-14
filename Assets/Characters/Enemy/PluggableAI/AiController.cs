@@ -157,7 +157,7 @@ public class AiController : MonoBehaviour
         timer = 0;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         ScoreManager.AddScore(score);
         EnemyCounter.EnemyKilled();

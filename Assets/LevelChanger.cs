@@ -29,7 +29,6 @@ public class LevelChanger : MonoBehaviour
 
     public void DelayedFadeToNextLevel(float delay)
     {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
         StartCoroutine(DelayedSceneChange(SceneManager.GetActiveScene().buildIndex + 1, delay));
     }
 

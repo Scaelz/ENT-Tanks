@@ -14,7 +14,6 @@ public abstract class PoolingSystem : MonoBehaviour
         {
             PreWarm(1);
         }
-
         GameObject go = poolQueue.Dequeue();
         go.transform.position = position;
         go.transform.rotation = rotation;
@@ -22,8 +21,12 @@ public abstract class PoolingSystem : MonoBehaviour
         return go;
     }
 
-    public void PreWarm(int count)
+    public void PreWarm(int count, GameObject prefab = null)
     {
+        if(prefab == null)
+        {
+            prefab = this.prefab;
+        }
         for (int i = 0; i < count; i++)
         {
             GameObject newObject = Instantiate(prefab);

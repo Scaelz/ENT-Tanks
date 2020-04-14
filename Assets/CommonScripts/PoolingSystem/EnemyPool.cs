@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyPool : PoolingSystem
 {
     public static EnemyPool Instance;
+    public bool isEmpty { get; private set; }
     private void Start()
     {
         if (Instance == null)
@@ -17,6 +18,19 @@ public class EnemyPool : PoolingSystem
         }
 
         poolQueue = new Queue<GameObject>();
-        PreWarm(prewarmCount);
     }
-}
+
+    public new GameObject GetInstance(Vector3 position, Quaternion rotation)
+    {
+        GameObject result = null;
+        if(poolQueue.Count > 0)
+        {
+            result = base.GetInstance(position, rotation);
+        }
+        if(poolQueue.Count == 0)
+        {
+            isEmpty = true;
+        }
+        return result;
+    }
+} 

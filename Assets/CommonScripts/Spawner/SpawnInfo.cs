@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Spawner/InfoObject")]
+[CreateAssetMenu(menuName = "SpawnInfo/Enemy")]
 public class SpawnInfo : ScriptableObject
 {
     public GameObject prefab;

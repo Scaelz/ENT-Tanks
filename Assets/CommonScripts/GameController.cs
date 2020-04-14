@@ -19,11 +19,10 @@ public class GameController : MonoBehaviour
         cameraSetup = FindObjectOfType<CameraSetup>();
         playersEagle = FindObjectOfType<PlayersEagle>();
         playersEagle.OnEagleDead += EndGame;
-        FindObjectOfType<ObjectsSpawner>().OnPlayerSpawn += SetPlayer;
         EnemyCounter.OnAllEnemiesDead += GoToNextLevel;
     }
 
-    void SetPlayer(PlayerController player)
+    public void SetPlayer(PlayerController player)
     {
         this.player = player;
         this.player.GetComponent<TankHealth>().OnGotKilled += EndGame;
