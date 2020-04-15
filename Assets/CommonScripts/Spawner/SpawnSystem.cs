@@ -15,20 +15,30 @@ public class SpawnSystem : MonoBehaviour
     Spawn freeSpawn;
     public SpawnInfo[] spawnInfos;
     public static event Action<int> OnSpawnsCounted;
+    bool canSpawn = false;
 
     private void Start()
     {
         PreWarmAllSpawns();
+        GameController.OnGameStarted += TurnOnSpawn;
+    }
+
+    void TurnOnSpawn()
+    {
+        canSpawn = true;
     }
 
     private void Update()
     {
-        if (timeSpawn)
+        if (canSpawn)
         {
-            timer += Time.deltaTime;
-            if (timer >= spawnFrequency)
+            if (timeSpawn)
             {
-                Spawn();
+                timer += Time.deltaTime;
+                if (timer >= spawnFrequency)
+                {
+                    Spawn();
+                }
             }
         }
     }

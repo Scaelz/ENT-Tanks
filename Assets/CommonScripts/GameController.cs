@@ -5,27 +5,45 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] int lifesLeft;
+
     [SerializeField] float sceneSwapDelay;
     public static bool GameStarted = false;
 
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
+    public static event Action<int> OnLifesUpdated;
     PlayersEagle playersEagle;
     CameraSetup cameraSetup;
     PlayerController player;
+    [SerializeField] Spawn playerSpawn;
+
 
     private void Start()
     {
+        OnLifesUpdated?.Invoke(lifesLeft);
         cameraSetup = FindObjectOfType<CameraSetup>();
         playersEagle = FindObjectOfType<PlayersEagle>();
         playersEagle.OnEagleDead += EndGame;
+        PlayerPool.Instance.PreWarm(lifesLeft);
         EnemyCounter.OnAllEnemiesDead += GoToNextLevel;
     }
 
     public void SetPlayer(PlayerController player)
     {
         this.player = player;
-        this.player.GetComponent<TankHealth>().OnGotKilled += EndGame;
+        this.player.GetComponent<TankHealth>().OnGotKilled += DecreaseLifes;
+    }
+
+    void DecreaseLifes()
+    {
+        lifesLeft--;
+        if(lifesLeft < 0)
+        {
+            EndGame();
+            return;
+        }
+        OnLifesUpdated?.Invoke(lifesLeft);
     }
 
     private void Update()
@@ -53,6 +71,20 @@ public class GameController : MonoBehaviour
         OnGameStarted?.Invoke();
         GameStarted = true;
         cameraSetup.PreventDoubleTrigger();
+        SpawnPlayer();
+    }
+
+    void SpawnPlayer()
+    {
+        playerSpawn.Process(1);
+        StartCoroutine(CreatePlayerInstance());
+    }
+
+    IEnumerator CreatePlayerInstance()
+    {
+        yield return new WaitForSeconds(1);
+        GameObject go = PlayerPool.Instance.GetInstance(playerSpawn.position, Quaternion.identity);
+        SetPlayer(go.GetComponent<PlayerController>());
     }
 
     public void EndGame()
