@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 6469abb6c9843a34291bcc46d76dee82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Options.unity
     guid: f1e3e2d302f8742469f32298a2258f66
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SpawZoneTest.unity
     guid: baf9674c792c9ad4c9e01066e6cf88d8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VFX Test.unity
     guid: e52b0e94d1fbcaa4eb118ab8b4ccccfe
+  - enabled: 1
+    path: Assets/Scenes/AItestpolygon.unity
+    guid: 5898ebbd729b79e4d98245252e543928
   m_configObjects: {}

@@ -20,7 +20,7 @@ public class TankHealth : MonoBehaviour, IKillable
 
     private void Start()
     {
-        FindObjectOfType<SpawnBonus>().OnAddTankHealth(this);
+        //FindObjectOfType<SpawnBonus>().OnAddTankHealth(this);
     }
 
     private void Update()
@@ -65,11 +65,11 @@ public class TankHealth : MonoBehaviour, IKillable
     public void KillThis()
     {
         OnGotKilled?.Invoke();
-        if (gameObject.GetComponent<EnemyMovement>() != null)
+        if (gameObject.GetComponent<AiController>() != null)
         {
             OnSpawnBonus?.Invoke();
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)

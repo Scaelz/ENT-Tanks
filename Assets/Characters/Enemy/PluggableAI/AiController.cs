@@ -41,6 +41,7 @@ public class AiController : MonoBehaviour
 
     private void Start()
     {
+        PlayerInFov = true;
         if (Fridge.isOn)
         {
             Freeze(true);
@@ -113,7 +114,10 @@ public class AiController : MonoBehaviour
 
         if (trackPlayer)
         {
-            Shooting.Aim(playerController.transform.position);
+            if(playerController != null)
+            {
+                Shooting.Aim(playerController.transform.position);
+            }
         }
         currentState.UpdateState(this);
     }
@@ -153,26 +157,26 @@ public class AiController : MonoBehaviour
         timer = 0;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         ScoreManager.AddScore(score);
         EnemyCounter.EnemyKilled();
         Fridge.OnFreezeStateChanged -= Freeze;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            PlayerInFov = true;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = true;
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            PlayerInFov = false;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = false;
+    //    }
+    //}
 }

@@ -13,6 +13,7 @@ public class TankEffects : MonoBehaviour
     [SerializeField] ParticleSystem shieldSystem;
     [SerializeField] float shiledParticlesCount;
     [SerializeField] GameObject iceCubePrefab;
+    [SerializeField] ParticleSystem shootParticle;
     GameObject iceCube;
     [Header("Sound effects")]
     float volume = 1;
@@ -49,6 +50,7 @@ public class TankEffects : MonoBehaviour
 
     void ShootHandler(Vector3 dir, Vector3 from)
     {
+        shootParticle.Play();
         Utils.PlayRandomSound(audioSource, shootingSounds);
     }
 
