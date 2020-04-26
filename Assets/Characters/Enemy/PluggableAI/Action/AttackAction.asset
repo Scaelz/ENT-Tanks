@@ -16,4 +16,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   rayRadius: 0.2
-  countDown: 1
+  countDown: 2.5

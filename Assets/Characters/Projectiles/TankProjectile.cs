@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -50,8 +51,11 @@ public class TankProjectile : MonoBehaviour, IProjectile
         {
             hitRegistered = true;
             ProjectilePool.Instance.ReturnToPool(gameObject);
-            Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
-            if(colliders.Length == 0)
+            //Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
+            Vector3 capsuleTopPoint = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+            Vector3 capsuleBotPoint = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+            var colliders = Physics.OverlapCapsule(capsuleBotPoint, capsuleTopPoint, explodeRadius, explodeMask);
+            if (colliders.Length == 0)
             {
                 return;
             }

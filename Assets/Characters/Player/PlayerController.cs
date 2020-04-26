@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour, IController
     {
         Shooting = GetComponent<IShooter>();
         Movement = GetComponent<IMoveable>();
-        FindObjectOfType<GameController>().SetPlayer(this);
+        //FindObjectOfType<GameController>().SetPlayer(this);
     }
 
     // Update is called once per frame

@@ -7,14 +7,21 @@ public class GameCanvasController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI enemyCountText;
+    [SerializeField] TextMeshProUGUI playerLifesText;
 
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager.OnScoreChanged += UpdateScoreText;
         EnemyCounter.OnEnemyKilled += UpdateEnemyCountText;
+        GameController.OnLifesUpdated += UpdateLifesText;
         UpdateScoreText(ScoreManager.score);
         UpdateEnemyCountText(0);
+    }
+
+    void UpdateLifesText(int lifesCount)
+    {
+        playerLifesText.text = lifesCount.ToString();
     }
 
     void UpdateEnemyCountText(int currentScore)

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: -755334519795905791, guid: 3ab7aff7fe07ad54da1ab9d55ea099ec,
         type: 3}
       propertyPath: explodeRadius
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -755334519795905791, guid: 3ab7aff7fe07ad54da1ab9d55ea099ec,
         type: 3}

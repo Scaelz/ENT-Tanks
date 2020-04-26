@@ -129,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 4281370338412900158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.7, y: 0, z: -6.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 7627552863807390745}
   - {fileID: 6344522175741802796}
@@ -186,7 +186,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.75
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -261,7 +261,8 @@ MonoBehaviour:
   - {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   shieldSystem: {fileID: 7261895505026607431}
   shiledParticlesCount: 0
-  iceCubePrefab: {fileID: 0}
+  iceCubePrefab: {fileID: 103390946271700795, guid: 2858be24ef723b349901e642b65a0740,
+    type: 3}
   shootParticle: {fileID: 2994273628172105445}
   destructionSounds:
   - {fileID: 8300000, guid: 4b098ab48e59991499ec784386fbb053, type: 3}

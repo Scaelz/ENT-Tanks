@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
             return;
         }
         OnLifesUpdated?.Invoke(lifesLeft);
+        SpawnPlayer();
     }
 
     private void Update()
@@ -76,6 +77,7 @@ public class GameController : MonoBehaviour
 
     void SpawnPlayer()
     {
+        StopAllCoroutines();
         playerSpawn.Process(1);
         StartCoroutine(CreatePlayerInstance());
     }
@@ -84,6 +86,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         GameObject go = PlayerPool.Instance.GetInstance(playerSpawn.position, Quaternion.identity);
+        go.transform.Rotate(new Vector3(0, 180, 0));
         SetPlayer(go.GetComponent<PlayerController>());
     }
 
