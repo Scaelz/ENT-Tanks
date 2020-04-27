@@ -9,6 +9,15 @@ public class LevelChanger : MonoBehaviour
     int loadSceneIndex;
     string sceneName;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        if(animator == null)
+        {
+            Destroy(this);
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -41,14 +50,15 @@ public class LevelChanger : MonoBehaviour
     public void FadeToLevel(int indexLevel)
     {
         if (indexLevel > SceneManager.sceneCount) return;
+
+        animator.SetTrigger("FadeOut");
         loadSceneIndex = indexLevel;
         sceneName = null;
-        animator.SetTrigger("FadeOut");
 
     }public void FadeToLevel(string sceneNameLevel)
     {
-        sceneName = sceneNameLevel;
         animator.SetTrigger("FadeOut");
+        sceneName = sceneNameLevel;
     }
 
     public void OnFadeComplite()

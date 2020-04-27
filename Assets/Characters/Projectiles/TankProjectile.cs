@@ -53,14 +53,14 @@ public class TankProjectile : MonoBehaviour, IProjectile
             //Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
             Vector3 capsuleTopPoint = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
             Vector3 capsuleBotPoint = new Vector3(transform.position.x, transform.position.y - 3, transform.position.z);
-            ExplosionsPool.Instance.GetInstance(transform.position, Quaternion.identity).GetComponent<ProjectileDestructionEffects>().RunFX();
             var colliders = Physics.OverlapCapsule(capsuleBotPoint, capsuleTopPoint, explodeRadius, explodeMask);
-            if (colliders.Length == 0)
+            if (colliders.Length > 0)
             {
-                return;
+                DestructionSystem.DestructPieces(colliders);
             }
-            DestructionSystem.DestructPieces(colliders);
+            
         }
+        ExplosionsPool.Instance.GetInstance(transform.position, Quaternion.identity).GetComponent<ProjectileDestructionEffects>().RunFX();
         ProjectilePool.Instance.ReturnToPool(gameObject);
 
     }

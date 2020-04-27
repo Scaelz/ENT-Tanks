@@ -100,6 +100,6 @@ public class GameController : MonoBehaviour
         OnGameEnded?.Invoke();
         OnGameEnded = null;
         OnGameStarted = null;
-        FindObjectOfType<LevelChanger>().DelayedFadeToLevel(0, sceneSwapDelay);
+        FindObjectOfType<LevelChanger>().FadeToLevel(0);
     }
 }

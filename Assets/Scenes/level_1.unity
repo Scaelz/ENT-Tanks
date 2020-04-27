@@ -1441,25 +1441,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1720336026, guid: c4a2e3d4f98dda443b6edfcd73ff0691, type: 3}
-      propertyPath: prewarmCount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2386481396045145370, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
         type: 3}
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1168136908}
-    - target: {fileID: 2386481396045145370, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
-        type: 3}
-      propertyPath: lifesLeft
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2386481396045145370, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
-        type: 3}
-      propertyPath: cursor
-      value: 
-      objectReference: {fileID: 2800000, guid: 6cd0a2a808ba2bb448dcd82d6c73fc72, type: 3}
     - target: {fileID: 3937587324114322529, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1519,11 +1505,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3937587324114322535, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a2e3d4f98dda443b6edfcd73ff0691, type: 3}
@@ -6838,26 +6819,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0505c9533389603458d5faefdc349596, type: 3}
---- !u!1 &1585685910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3937587324114322531, guid: c4a2e3d4f98dda443b6edfcd73ff0691,
-    type: 3}
-  m_PrefabInstance: {fileID: 413457441}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1585685911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585685910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8621efa79cfa13545b20c9384879fcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7412337632578798631, guid: 2305ba2f8444b404aad0f8751a5e2ef2, type: 3}
-  prewarmCount: 3
 --- !u!1001 &1645114244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8377,7 +8338,7 @@ PrefabInstance:
     - target: {fileID: 2970624174659316192, guid: 8a2c442757ac3f943aa857c1ca8eb566,
         type: 3}
       propertyPath: m_Name
-      value: LevelChanger
+      value: LevelChangerReal
       objectReference: {fileID: 0}
     - target: {fileID: 2970624174659316198, guid: 8a2c442757ac3f943aa857c1ca8eb566,
         type: 3}
