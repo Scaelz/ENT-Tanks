@@ -6,6 +6,7 @@ public class Spawn : MonoBehaviour
 {
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] AudioSource audioSource;
+
     public Vector3 position { get => transform.position; }
     public bool Idle { get; private set; } = true;
 

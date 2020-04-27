@@ -139,7 +139,7 @@ MonoBehaviour:
   recoilPower: 0
   reloadSpeed: 1
   cabinTransform: {fileID: 2378217002387136706}
-  cabinRotateSpeed: 35
+  cabinRotateSpeed: 75
 --- !u!114 &6112154993567843063
 MonoBehaviour:
   m_ObjectHideFlags: 0

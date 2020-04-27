@@ -176,6 +176,7 @@ MonoBehaviour:
   shooting: {fileID: 4281370338412900155}
   patrolRoute: []
   patrolIndex: 0
+  chaseTarget: {fileID: 0}
 --- !u!195 &4281370338412900153
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -230,7 +231,7 @@ MonoBehaviour:
   recoilPower: 0
   reloadSpeed: 1.2
   cabinTransform: {fileID: 6344522175741802796}
-  cabinRotateSpeed: 35
+  cabinRotateSpeed: 85
 --- !u!114 &4152733602647284737
 MonoBehaviour:
   m_ObjectHideFlags: 0

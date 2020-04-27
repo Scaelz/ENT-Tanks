@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 11264
   rayRadius: 0.2
   countDown: 2.5

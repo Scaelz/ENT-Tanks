@@ -16,6 +16,8 @@ public class SpawnSystem : MonoBehaviour
     public SpawnInfo[] spawnInfos;
     public static event Action<int> OnSpawnsCounted;
     bool canSpawn = false;
+    [SerializeField] int enemiesAtOnce;
+
 
     private void Start()
     {
@@ -45,6 +47,11 @@ public class SpawnSystem : MonoBehaviour
 
     void Spawn()
     {
+        if(enemiesAtOnce <= FindObjectsOfType<AiController>().Length)
+        {
+            timer = 0;
+            return;
+        }
         if (!EnemyPool.Instance.isEmpty)
         {
             StartCoroutine(CalculateFreeSpawn());

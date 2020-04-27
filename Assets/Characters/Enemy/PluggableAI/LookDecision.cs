@@ -16,23 +16,23 @@ public class LookDecision : Decision
 
     bool Look(AiController controller)
     {
-        //Debug.DrawRay(controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward * 90, Color.blue);
-        //var direction = Quaternion.AngleAxis(45, controller.Shooting.Muzzle.up) * controller.Shooting.Muzzle.forward;
-        //Debug.DrawRay(controller.Shooting.Muzzle.position, direction * 90, Color.red);
-        //direction = Quaternion.AngleAxis(-45, controller.Shooting.Muzzle.up) * controller.Shooting.Muzzle.forward;
-        //Debug.DrawRay(controller.Shooting.Muzzle.position, direction * 90, Color.red);
-       
+        Vector3[] targets = new Vector3[2] { controller.GetPlayerPosition(), controller.GetBunkerPosition() };
+
         if (controller.PlayerInFov)
         {
-            var inDirection = controller.GetTargetPosition() - controller.Shooting.Muzzle.position;
-            float angle = Vector3.Angle(controller.GetTargetPosition() - controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward);
-            if (angle > -(viewAngle / 2) && angle < viewAngle / 2)
+            foreach (Vector3 target in targets)
             {
-                if(Physics.Raycast(controller.Shooting.Muzzle.position, inDirection, out RaycastHit hit, 999, layerMask))
+                var inDirection = target - controller.Shooting.Muzzle.position;
+                float angle = Vector3.Angle(target - controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward);
+                if (angle > -(viewAngle / 2) && angle < viewAngle / 2)
                 {
-                    if(hit.transform.tag == "Player")
+                    if (Physics.Raycast(controller.Shooting.Muzzle.position, inDirection, out RaycastHit hit, 999, layerMask))
                     {
-                        return true;
+                        if (hit.transform.tag == "Player")
+                        {
+                            controller.chaseTarget = hit.transform.gameObject;
+                            return true;
+                        }
                     }
                 }
             }

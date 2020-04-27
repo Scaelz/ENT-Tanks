@@ -23,6 +23,8 @@ public class AiController : MonoBehaviour
     [SerializeField] Transform[] patrolRoute;
     [SerializeField] int patrolIndex;
     Vector3 lastPlayerPosition;
+    public GameObject chaseTarget;
+
 
     public int PatrolIndex
     {
@@ -114,19 +116,29 @@ public class AiController : MonoBehaviour
 
         if (trackPlayer)
         {
-            if(playerController != null)
+            if(chaseTarget == null)
             {
-                Shooting.Aim(playerController.transform.position);
+                Shooting.Aim(chaseTarget.transform.position);
             }
         }
         currentState.UpdateState(this);
     }
 
-    public Vector3 GetTargetPosition()
+    public Vector3 GetPlayerPosition()
     {
         if (playerController != null)
         {
             return playerController.transform.position;
+        }
+        return Vector3.zero;
+    }
+
+    public Vector3 GetBunkerPosition()
+    {
+        PlayersEagle eagle = FindObjectOfType<PlayersEagle>();
+        if (eagle != null)
+        {
+            return eagle.transform.position;
         }
         return Vector3.zero;
     }

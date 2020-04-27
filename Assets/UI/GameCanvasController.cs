@@ -21,16 +21,22 @@ public class GameCanvasController : MonoBehaviour
 
     void UpdateLifesText(int lifesCount)
     {
+        if (playerLifesText == null)
+            return;
         playerLifesText.text = lifesCount.ToString();
     }
 
     void UpdateEnemyCountText(int currentScore)
     {
+        if (enemyCountText == null)
+            return;
         enemyCountText.text = currentScore.ToString();
     }
 
     void UpdateScoreText(int currentScore)
     {
+        if (scoreText == null)
+            return;
         scoreText.text = currentScore.ToString();
     }
 }

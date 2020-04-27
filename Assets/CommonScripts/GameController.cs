@@ -49,12 +49,14 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-
         if (!GameStarted)
         {
-            if (cameraSetup.CameraSet)
+            if(cameraSetup != null)
             {
-                StartGame();
+                if (cameraSetup.CameraSet)
+                {
+                    StartGame();
+                }
             }
         }
     }
