@@ -20,7 +20,7 @@ public class TankHealth : MonoBehaviour, IKillable
 
     private void Start()
     {
-        //FindObjectOfType<SpawnBonus>().OnAddTankHealth(this);
+        FindObjectOfType<SpawnBonus>().OnAddTankHealth(this);
     }
 
     private void Update()

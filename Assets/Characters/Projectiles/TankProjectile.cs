@@ -50,7 +50,6 @@ public class TankProjectile : MonoBehaviour, IProjectile
         if (!hitRegistered)
         {
             hitRegistered = true;
-            ProjectilePool.Instance.ReturnToPool(gameObject);
             //Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius, explodeMask);
             Vector3 capsuleTopPoint = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
             Vector3 capsuleBotPoint = new Vector3(transform.position.x, transform.position.y - 3, transform.position.z);
@@ -62,6 +61,7 @@ public class TankProjectile : MonoBehaviour, IProjectile
             }
             DestructionSystem.DestructPieces(colliders);
         }
+        ProjectilePool.Instance.ReturnToPool(gameObject);
 
     }
 }

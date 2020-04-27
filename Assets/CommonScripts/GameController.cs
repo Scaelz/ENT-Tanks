@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] int lifesLeft;
-
+    [SerializeField] Texture2D cursor;
     [SerializeField] float sceneSwapDelay;
     public static bool GameStarted = false;
 
@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.SetCursor(cursor, new Vector2(16,0), CursorMode.Auto);
         OnLifesUpdated?.Invoke(lifesLeft);
         cameraSetup = FindObjectOfType<CameraSetup>();
         playersEagle = FindObjectOfType<PlayersEagle>();
@@ -65,7 +66,8 @@ public class GameController : MonoBehaviour
     {
         if (GameStarted)
         {
-            FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);
+            EndGame(); // Поменять если будет больше уровней.
+            //FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);
         }
     }
 
