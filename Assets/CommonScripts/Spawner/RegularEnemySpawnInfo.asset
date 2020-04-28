@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RegularEnemySpawnInfo
   m_EditorClassIdentifier: 
   prefab: {fileID: 4281370338412900158, guid: 3c833f058986f344881811330216dd83, type: 3}
-  count: 15
+  count: 18

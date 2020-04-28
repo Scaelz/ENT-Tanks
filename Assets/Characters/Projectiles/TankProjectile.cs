@@ -62,6 +62,6 @@ public class TankProjectile : MonoBehaviour, IProjectile
         }
         ExplosionsPool.Instance.GetInstance(transform.position, Quaternion.identity).GetComponent<ProjectileDestructionEffects>().RunFX();
         ProjectilePool.Instance.ReturnToPool(gameObject);
-
+        hitRegistered = false;
     }
 }
