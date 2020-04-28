@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] int lifesLeft;
     [SerializeField] Texture2D cursor;
     [SerializeField] float sceneSwapDelay;
+    [SerializeField] float timeShiedOnSpawn = 5;
     public static bool GameStarted = false;
 
     public static event Action OnGameStarted;
@@ -102,6 +103,8 @@ public class GameController : MonoBehaviour
         GameObject go = PlayerPool.Instance.GetInstance(playerSpawn.position, Quaternion.identity);
         go.transform.Rotate(new Vector3(0, 180, 0));
         SetPlayer(go.GetComponent<PlayerController>());
+        StartCoroutine(BonusDefencePlayer.ActivedShield(player.gameObject.GetComponent<TankHealth>(), 
+            player.gameObject.GetComponent<TankEffects>(), 0, timeShiedOnSpawn));
     }
 
     public void EndGame()
