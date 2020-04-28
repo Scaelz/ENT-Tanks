@@ -15,9 +15,12 @@ public class ScoreManager : MonoBehaviour
         GameController.OnGameEnded += NullScore;
     }
 
-    public static void NullScore()
+    public static void NullScore(bool isWin)
     {
-        score = 0;
+        if (!isWin)
+        {
+            score = 0;
+        }
     }
 
     public static void AddScore(int value)

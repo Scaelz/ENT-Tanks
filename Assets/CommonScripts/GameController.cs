@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public static bool GameStarted = false;
 
     public static event Action OnGameStarted;
-    public static event Action OnGameEnded;
+    public static event Action<bool> OnGameEnded;
     public static event Action<int> OnLifesUpdated;
     PlayersEagle playersEagle;
     CameraSetup cameraSetup;
@@ -28,6 +28,12 @@ public class GameController : MonoBehaviour
         playersEagle.OnEagleDead += EndGame;
         PlayerPool.Instance.PreWarm(lifesLeft);
         EnemyCounter.OnAllEnemiesDead += GoToNextLevel;
+    }
+
+    public void AddLife()
+    {
+        lifesLeft++;
+        OnLifesUpdated?.Invoke(lifesLeft);
     }
 
     public void SetPlayer(PlayerController player)
@@ -66,8 +72,9 @@ public class GameController : MonoBehaviour
     {
         if (GameStarted)
         {
-            EndGame(); // Поменять если будет больше уровней.
-            //FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);
+            OnGameEnded?.Invoke(true);
+            FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);
+            //;
         }
     }
 
@@ -97,9 +104,9 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         GameStarted = false;
-        OnGameEnded?.Invoke();
+        OnGameEnded?.Invoke(false);
         OnGameEnded = null;
         OnGameStarted = null;
-        FindObjectOfType<LevelChanger>().FadeToLevel(0);
+        FindObjectOfType<LevelChanger>().DelayedFadeToNextLevel(sceneSwapDelay);
     }
 }

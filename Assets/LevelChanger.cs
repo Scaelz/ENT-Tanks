@@ -49,7 +49,10 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToLevel(int indexLevel)
     {
-        if (indexLevel > SceneManager.sceneCount) return;
+        if (indexLevel > SceneManager.sceneCount)
+        {
+            indexLevel = 0;
+        }
 
         animator.SetTrigger("FadeOut");
         loadSceneIndex = indexLevel;

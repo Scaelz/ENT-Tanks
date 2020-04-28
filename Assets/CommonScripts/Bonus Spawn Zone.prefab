@@ -92,12 +92,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60f2aedf5656bc4bbd1cb9dd2b513d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 100
+  chanceToSpawn: 25
   bonusObject:
   - {fileID: 4378161695617784400, guid: 2d602d811870bd14b867a5e3bf284e58, type: 3}
   - {fileID: 4378161695617784400, guid: d2e29bc0fa4c58a4eabb0175ccf7bdd3, type: 3}
   - {fileID: 4378161695617784400, guid: 168742c3b305a894aab96a06826c8248, type: 3}
   - {fileID: 4378161695617784400, guid: bbf01dfd22fc2604db487501c8e94432, type: 3}
-  - {fileID: 4378161695617784400, guid: b6731865bc77a7b4ba2e2715fab144b1, type: 3}
   - {fileID: 4378161695617784400, guid: 1541ba33e12113d4e89296655cec90ce, type: 3}
-  bonusChances: 1e0000001e0000000f0000000f0000000500000005000000
+  bonusChances: 1e0000001e0000000f0000000f00000005000000
