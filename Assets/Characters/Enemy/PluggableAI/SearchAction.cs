@@ -19,7 +19,7 @@ public class SearchAction : AiAction
         controller.Movement.MoveTo(lastSeenAt);
         if (!controller.Movement.IsMoving())
         {
-            controller.Shooting.Aim(controller.GetTargetPosition());
+            controller.Shooting.Aim(controller.GetPlayerPosition());
         }
     }
 }

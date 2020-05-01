@@ -18,7 +18,7 @@ public class AttackAction : AiAction
     {
         if (controller.CheckActionTimer(countDown))
         {
-            Debug.DrawRay(controller.transform.position, controller.Shooting.GetMuzzleDirection() * 90, Color.green);
+            //Debug.DrawRay(controller.transform.position, controller.Shooting.GetMuzzleDirection() * 90, Color.green);
             if (Physics.SphereCast(controller.transform.position, rayRadius,
                 controller.Shooting.GetMuzzleDirection(), out RaycastHit hit, layerMask))
             {

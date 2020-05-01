@@ -40,7 +40,7 @@ public class SpawnBonus : MonoBehaviour
     {
         randomNumber = Random.Range(0, 100);
         if (randomNumber >= chanceToSpawn) return;
-        SpawnBonusWithChance();
+            SpawnBonusWithChance();
     }
 
     public void SpawnBonusWithChance()

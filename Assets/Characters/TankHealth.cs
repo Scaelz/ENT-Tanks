@@ -65,11 +65,8 @@ public class TankHealth : MonoBehaviour, IKillable
     public void KillThis()
     {
         OnGotKilled?.Invoke();
-        if (gameObject.GetComponent<EnemyMovement>() != null)
-        {
-            OnSpawnBonus?.Invoke();
-        }
-        Destroy(gameObject);
+        OnSpawnBonus?.Invoke();
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)

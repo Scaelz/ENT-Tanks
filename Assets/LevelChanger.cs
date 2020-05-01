@@ -9,6 +9,15 @@ public class LevelChanger : MonoBehaviour
     int loadSceneIndex;
     string sceneName;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        if(animator == null)
+        {
+            Destroy(this);
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -29,7 +38,6 @@ public class LevelChanger : MonoBehaviour
 
     public void DelayedFadeToNextLevel(float delay)
     {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
         StartCoroutine(DelayedSceneChange(SceneManager.GetActiveScene().buildIndex + 1, delay));
     }
 
@@ -41,15 +49,19 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToLevel(int indexLevel)
     {
-        if (indexLevel > SceneManager.sceneCount) return;
+        if (indexLevel > SceneManager.sceneCount)
+        {
+            indexLevel = 0;
+        }
+
+        animator.SetTrigger("FadeOut");
         loadSceneIndex = indexLevel;
         sceneName = null;
-        animator.SetTrigger("FadeOut");
 
     }public void FadeToLevel(string sceneNameLevel)
     {
-        sceneName = sceneNameLevel;
         animator.SetTrigger("FadeOut");
+        sceneName = sceneNameLevel;
     }
 
     public void OnFadeComplite()

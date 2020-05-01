@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,8 +9,10 @@ public class AiController : MonoBehaviour
     [SerializeField] int score;
     [SerializeField] State currentState;
     [SerializeField] State remainState;
+    [SerializeField] State freezeState;
     [SerializeField] float actionTime;
     float timer;
+    public bool PlayerInFov;
 
     [SerializeField] IMoveable movement;
     public IMoveable Movement => movement;
@@ -20,6 +23,9 @@ public class AiController : MonoBehaviour
     [SerializeField] Transform[] patrolRoute;
     [SerializeField] int patrolIndex;
     Vector3 lastPlayerPosition;
+    public GameObject chaseTarget;
+
+
     public int PatrolIndex
     {
         get
@@ -37,11 +43,30 @@ public class AiController : MonoBehaviour
 
     private void Start()
     {
+        PlayerInFov = true;
+        if (Fridge.isOn)
+        {
+            Freeze(true);
+        }
+        Fridge.OnFreezeStateChanged += Freeze;
         movement = GetComponent<IMoveable>();
         playerController = FindObjectOfType<PlayerController>();
         GetRouteMarks();
     }
 
+    void Freeze(bool state)
+    {
+        if (state)
+        {
+            TransitionToState(freezeState);
+        }
+        GetComponent<TankEffects>().FreezeEffect(state);
+    }
+
+    public Vector3 GetForward()
+    {
+        return transform.forward;
+    }
 
     public Vector3 GetLastSeenPosition()
     {
@@ -88,18 +113,32 @@ public class AiController : MonoBehaviour
 
     private void Update()
     {
+
         if (trackPlayer)
         {
-            Shooting.Aim(playerController.transform.position);
+            if(chaseTarget == null)
+            {
+                Shooting.Aim(chaseTarget.transform.position);
+            }
         }
         currentState.UpdateState(this);
     }
 
-    public Vector3 GetTargetPosition()
+    public Vector3 GetPlayerPosition()
     {
         if (playerController != null)
         {
             return playerController.transform.position;
+        }
+        return Vector3.zero;
+    }
+
+    public Vector3 GetBunkerPosition()
+    {
+        PlayersEagle eagle = FindObjectOfType<PlayersEagle>();
+        if (eagle != null)
+        {
+            return eagle.transform.position;
         }
         return Vector3.zero;
     }
@@ -130,9 +169,26 @@ public class AiController : MonoBehaviour
         timer = 0;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         ScoreManager.AddScore(score);
         EnemyCounter.EnemyKilled();
+        Fridge.OnFreezeStateChanged -= Freeze;
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = true;
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInFov = false;
+    //    }
+    //}
 }

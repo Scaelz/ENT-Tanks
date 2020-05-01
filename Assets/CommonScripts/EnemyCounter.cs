@@ -11,7 +11,7 @@ public class EnemyCounter : MonoBehaviour
 
     private void Start()
     {
-        ObjectsSpawner.OnSpawnCounted += SetEnemyCount;
+        SpawnSystem.OnSpawnsCounted += SetEnemyCount;
     }
 
     void SetEnemyCount(int count)

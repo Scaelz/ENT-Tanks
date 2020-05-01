@@ -6,6 +6,7 @@ public class LookDecision : Decision
 {
     public LayerMask layerMask;
     public float rayRadius;
+    public float viewAngle;
 
     public override bool Decide(AiController controller)
     {
@@ -15,12 +16,26 @@ public class LookDecision : Decision
 
     bool Look(AiController controller)
     {
-        Debug.DrawRay(controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward * 90, Color.red);
-        if(Physics.SphereCast(controller.Shooting.Muzzle.position, rayRadius,
-            controller.Shooting.Muzzle.forward, out RaycastHit hit, 1000, layerMask))
+        Vector3[] targets = new Vector3[2] { controller.GetPlayerPosition(), controller.GetBunkerPosition() };
+
+        if (controller.PlayerInFov)
         {
-            if(hit.transform.tag == "Player")
-                return true;
+            foreach (Vector3 target in targets)
+            {
+                var inDirection = target - controller.Shooting.Muzzle.position;
+                float angle = Vector3.Angle(target - controller.Shooting.Muzzle.position, controller.Shooting.Muzzle.forward);
+                if (angle > -(viewAngle / 2) && angle < viewAngle / 2)
+                {
+                    if (Physics.Raycast(controller.Shooting.Muzzle.position, inDirection, out RaycastHit hit, 999, layerMask))
+                    {
+                        if (hit.transform.tag == "Player")
+                        {
+                            controller.chaseTarget = hit.transform.gameObject;
+                            return true;
+                        }
+                    }
+                }
+            }
         }
         return false;
     }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe358b1fb8c5dc641bd60fc27e35067d, type: 3}
+  m_Name: FreezeState
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: fde664298c676044080d5f10a2a8f40a, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: da95922eebbbe1840a4d0fd9341c1ea8, type: 2}
+    trueState: {fileID: 11400000, guid: 7fe7134db73039e4f800f54107cbdcf7, type: 2}
+    falseState: {fileID: 11400000, guid: 3e18dbeafc7fd9e43a4d02f80c429479, type: 2}

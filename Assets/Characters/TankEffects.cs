@@ -12,11 +12,15 @@ public class TankEffects : MonoBehaviour
     TankShoot tankShoot;
     [SerializeField] ParticleSystem shieldSystem;
     [SerializeField] float shiledParticlesCount;
+    [SerializeField] GameObject iceCubePrefab;
+    [SerializeField] ParticleSystem shootParticle;
+    GameObject iceCube;
     [Header("Sound effects")]
     float volume = 1;
     [SerializeField] AudioClip[] destructionSounds;
     [SerializeField] AudioClip[] hitSounds;
     [SerializeField] AudioClip[] shootingSounds;
+    
     AudioSource audioSource;
 
     private void Start()
@@ -31,8 +35,22 @@ public class TankEffects : MonoBehaviour
         tankShoot.OnShoot += ShootHandler;
     }
 
+    public void FreezeEffect(bool state)
+    {
+        if (state)
+        {
+            iceCube = Instantiate(iceCubePrefab, transform.position, Quaternion.identity);
+            iceCube.transform.SetParent(transform);
+        }
+        else
+        {
+            Destroy(iceCube);
+        }
+    }
+
     void ShootHandler(Vector3 dir, Vector3 from)
     {
+        shootParticle.Play();
         Utils.PlayRandomSound(audioSource, shootingSounds);
     }
 

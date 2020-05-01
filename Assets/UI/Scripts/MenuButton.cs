@@ -58,7 +58,7 @@ public class MenuButton : IMenuButton, IPointerEnterHandler, IPointerExitHandler
 
     IEnumerator WaitAndLoadGame()
     {
-        FindObjectOfType<LevelChanger>().FadeToLevel(nameGameScene);
+        FindObjectOfType<LevelChanger>().FadeToLevel(1);
         yield return new WaitForSeconds(waitTime);
         //SceneManager.LoadScene(nameGameScene);
     }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e7839bc76e644ea69acc95f47e2fc, type: 3}
   m_Name: SearchDecision
   m_EditorClassIdentifier: 
-  decisionTimer: 2
+  decisionTimer: 3
