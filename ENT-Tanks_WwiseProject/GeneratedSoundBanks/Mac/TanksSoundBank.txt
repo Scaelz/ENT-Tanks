@@ -1,0 +1,33 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1012143543	play_spawn			\Default Work Unit\play_spawn	
+	2045007312	play_enemy_hit			\Default Work Unit\play_enemy_hit	
+	3015324718	play_fire			\Default Work Unit\play_fire	
+	3817573795	play_bonus			\Default Work Unit\play_bonus	
+	4013708024	play_destroy			\Default Work Unit\play_destroy	
+
+Effect plug-ins	ID	Name	Type				Notes
+	365776216	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+	423466807	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+	596630530	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
+	851155386	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	42738685	bonus_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\bonus_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\bonus_01		219972
+	51906525	enemy_hit_02	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\enemy_hit_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemy_hit\enemy_hit_02		218264
+	256722045	spawn_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\spawn_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\spawn_01		358480
+	296913477	fire_04	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\fire_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\fire\fire_04		175892
+	332741926	fire_02	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\fire_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\fire\fire_02		160748
+	380472414	enemy_hit_03	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\enemy_hit_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemy_hit\enemy_hit_03		221908
+	438097419	fire_05	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\fire_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\fire\fire_05		189720
+	454572879	destroy_02	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_02		291104
+	481815418	destroy_05	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_05		289004
+	493768019	destroy_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_01		284656
+	607743359	fire_03	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\fire_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\fire\fire_03		182416
+	772945989	enemy_hit_05	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\enemy_hit_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemy_hit\enemy_hit_05		222016
+	774444380	enemy_hit_04	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\enemy_hit_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemy_hit\enemy_hit_04		215684
+	783235013	enemy_hit_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\enemy_hit_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemy_hit\enemy_hit_01		221052
+	799965384	destroy_04	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_04		290868
+	854712417	fire_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\fire_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\fire\fire_01		186508
+	962486194	destroy_06	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_06		291128
+	1021565917	destroy_03	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Mac\SFX\TanksSound\destroy_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\destroy\destroy_03		295304
+

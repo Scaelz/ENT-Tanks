@@ -39,15 +39,21 @@ public class MenuButtonController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+
             PlaySound(changeMenuSFX);
             if (index < maxIndex) index++;
             else index = 0;
+            AkSoundEngine.PostEvent("play_menu_02", gameObject);
+            
+
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             PlaySound(changeMenuSFX);
             if (index > 0) index--;
             else index = maxIndex;
+            AkSoundEngine.PostEvent("play_menu_02", gameObject);
+
         }
     }
 }

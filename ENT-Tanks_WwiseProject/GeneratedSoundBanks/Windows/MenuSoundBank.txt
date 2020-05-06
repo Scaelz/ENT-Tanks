@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3868654020	play_menu_02			\Default Work Unit\play_menu_02	
+	3868654023	play_menu_01			\Default Work Unit\play_menu_01	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	155357860	menu_01	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Windows\SFX\TanksSound\menu_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\menu_01		112888
+	313668697	menu_02	E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Windows\SFX\TanksSound\menu_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\menu_02		104028
+

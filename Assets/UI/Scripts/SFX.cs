@@ -12,4 +12,5 @@ public class SFX : MonoBehaviour
 
     public AudioSource GetChangeMenuSFX() => changeMenu;
     public AudioSource GetSelectMenuSFX() => selectMenu;
+
 }

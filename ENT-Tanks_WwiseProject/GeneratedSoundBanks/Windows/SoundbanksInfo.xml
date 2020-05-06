@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\GitHub\ENT-Tanks\ENT-Tanks_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2993528031" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\TanksSoundBank</ObjectPath>
+			<ShortName>TanksSoundBank</ShortName>
+			<Path>TanksSoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3817573795" Name="play_bonus" ObjectPath="\Events\Default Work Unit\play_bonus" DurationType="OneShot" DurationMin="1.246644" DurationMax="1.246644">
+					<IncludedMemoryFiles>
+						<File Id="42738685" Language="SFX">
+							<ShortName>TanksSound\bonus_01.wav</ShortName>
+							<Path>SFX\TanksSound\bonus_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4013708024" Name="play_destroy" ObjectPath="\Events\Default Work Unit\play_destroy" DurationType="OneShot" DurationMin="1.072426" DurationMax="2.914074">
+					<IncludedMemoryFiles>
+						<File Id="454572879" Language="SFX">
+							<ShortName>TanksSound\destroy_02.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_02_10C4C929.wem</Path>
+						</File>
+						<File Id="481815418" Language="SFX">
+							<ShortName>TanksSound\destroy_05.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_05_10C4C929.wem</Path>
+						</File>
+						<File Id="493768019" Language="SFX">
+							<ShortName>TanksSound\destroy_01.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_01_10C4C929.wem</Path>
+						</File>
+						<File Id="799965384" Language="SFX">
+							<ShortName>TanksSound\destroy_04.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_04_10C4C929.wem</Path>
+						</File>
+						<File Id="962486194" Language="SFX">
+							<ShortName>TanksSound\destroy_06.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_06_10C4C929.wem</Path>
+						</File>
+						<File Id="1021565917" Language="SFX">
+							<ShortName>TanksSound\destroy_03.wav</ShortName>
+							<Path>SFX\TanksSound\destroy_03_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2045007312" Name="play_enemy_hit" ObjectPath="\Events\Default Work Unit\play_enemy_hit" DurationType="OneShot" DurationMin="1.518844" DurationMax="2.457566">
+					<IncludedMemoryFiles>
+						<File Id="51906525" Language="SFX">
+							<ShortName>TanksSound\enemy_hit_02.wav</ShortName>
+							<Path>SFX\TanksSound\enemy_hit_02_10C4C929.wem</Path>
+						</File>
+						<File Id="380472414" Language="SFX">
+							<ShortName>TanksSound\enemy_hit_03.wav</ShortName>
+							<Path>SFX\TanksSound\enemy_hit_03_10C4C929.wem</Path>
+						</File>
+						<File Id="772945989" Language="SFX">
+							<ShortName>TanksSound\enemy_hit_05.wav</ShortName>
+							<Path>SFX\TanksSound\enemy_hit_05_10C4C929.wem</Path>
+						</File>
+						<File Id="774444380" Language="SFX">
+							<ShortName>TanksSound\enemy_hit_04.wav</ShortName>
+							<Path>SFX\TanksSound\enemy_hit_04_10C4C929.wem</Path>
+						</File>
+						<File Id="783235013" Language="SFX">
+							<ShortName>TanksSound\enemy_hit_01.wav</ShortName>
+							<Path>SFX\TanksSound\enemy_hit_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3015324718" Name="play_fire" ObjectPath="\Events\Default Work Unit\play_fire" DurationType="OneShot" DurationMin="0.811526" DurationMax="1.076390">
+					<IncludedMemoryFiles>
+						<File Id="296913477" Language="SFX">
+							<ShortName>TanksSound\fire_04.wav</ShortName>
+							<Path>SFX\TanksSound\fire_04_10C4C929.wem</Path>
+						</File>
+						<File Id="332741926" Language="SFX">
+							<ShortName>TanksSound\fire_02.wav</ShortName>
+							<Path>SFX\TanksSound\fire_02_10C4C929.wem</Path>
+						</File>
+						<File Id="438097419" Language="SFX">
+							<ShortName>TanksSound\fire_05.wav</ShortName>
+							<Path>SFX\TanksSound\fire_05_10C4C929.wem</Path>
+						</File>
+						<File Id="607743359" Language="SFX">
+							<ShortName>TanksSound\fire_03.wav</ShortName>
+							<Path>SFX\TanksSound\fire_03_10C4C929.wem</Path>
+						</File>
+						<File Id="854712417" Language="SFX">
+							<ShortName>TanksSound\fire_01.wav</ShortName>
+							<Path>SFX\TanksSound\fire_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1012143543" Name="play_spawn" ObjectPath="\Events\Default Work Unit\play_spawn" DurationType="OneShot" DurationMin="3.009348" DurationMax="3.009348">
+					<IncludedMemoryFiles>
+						<File Id="256722045" Language="SFX">
+							<ShortName>TanksSound\spawn_01.wav</ShortName>
+							<Path>SFX\TanksSound\spawn_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A66DE88E-48E0-4C6E-A1B3-ADB42B5831CA}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{A66DE88E-48E0-4C6E-A1B3-ADB42B5831CA}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="fire" ID="{D30CE68F-4AB1-488D-AF56-8968A94D2735}" ShortID="70496746">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>200</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{58F3D709-914E-46A4-A8D8-B2EA142C8281}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-202"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_Guitar_Distortion_(Custom)" ID="{FB37C546-3B68-4D5E-B2E4-08CCFCFA42A7}" ShortID="423466807" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+									<PropertyList>
+										<Property Name="DistortionDrive" Type="Real32" Value="23"/>
+										<Property Name="DistortionTone" Type="Real32" Value="100"/>
+										<Property Name="DistortionType" Type="int32" Value="1"/>
+										<Property Name="OutputLevel" Type="Real32" Value="-0.5"/>
+										<Property Name="WetDryMix" Type="Real32" Value="74"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="fire_03" ID="{A3A9420F-7A17-4F9B-B466-EE6AE51358A2}" ShortID="422929725">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fire_03" ID="{F6860A8F-1224-4ED6-BBEF-8C45F67A67A9}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\fire_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="607743359"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fire_03" ID="{F6860A8F-1224-4ED6-BBEF-8C45F67A67A9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fire_04" ID="{18CB06BE-4506-4046-96D8-1A18A914F863}" ShortID="474490243">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fire_04" ID="{BA4E7FFF-BC0B-4A84-94A5-E6D5E8640A4A}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\fire_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="296913477"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fire_04" ID="{BA4E7FFF-BC0B-4A84-94A5-E6D5E8640A4A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fire_05" ID="{FF649F25-6946-46DD-89C9-585824191D24}" ShortID="170259225">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fire_05" ID="{8A25E302-DC1D-4CA2-B34E-A3FACEE2785F}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\fire_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="438097419"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fire_05" ID="{8A25E302-DC1D-4CA2-B34E-A3FACEE2785F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fire_02" ID="{8800B2F4-D29F-4956-A011-54BE702B1CF9}" ShortID="838191061">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fire_02" ID="{55033BDD-8601-4191-B8E5-B0AE546E7F3F}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\fire_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="332741926"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fire_02" ID="{55033BDD-8601-4191-B8E5-B0AE546E7F3F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fire_01" ID="{F57B9942-D8E4-43EC-9223-034BFC396FCD}" ShortID="3402366">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fire_01" ID="{92097597-8FBD-4278-B6BA-55CEB9B9BCA0}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\fire_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="854712417"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fire_01" ID="{92097597-8FBD-4278-B6BA-55CEB9B9BCA0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="spawn_01" ID="{360AE8D2-9FA5-431B-9145-A4882FDA23C8}" ShortID="760677298">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-680</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="spawn_01" ID="{EC09FB65-38B1-4A36-BFD1-1F67EB6EE0AC}">
+							<Language>SFX</Language>
+							<AudioFile>TanksSound\spawn_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="256722045"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="spawn_01" ID="{EC09FB65-38B1-4A36-BFD1-1F67EB6EE0AC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="enemy_hit" ID="{C3358626-A198-4DD6-9874-CC42108131A0}" ShortID="596812273">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-730</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{B49D5E97-609B-469A-9779-C5C22302ED98}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="354"/>
+											<Property Name="Min" Type="Real64" Value="-429"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="Effect1">
+							<Custom>
+								<Effect Name="Wwise_Guitar_Distortion_(Custom)" ID="{94C9BA9C-52A5-4229-B6CC-2FEBF958D720}" ShortID="365776216" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+									<PropertyList>
+										<Property Name="DistortionDrive" Type="Real32" Value="61"/>
+										<Property Name="DistortionType" Type="int32" Value="2"/>
+										<Property Name="OutputLevel" Type="Real32" Value="3.5"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="Effect2">
+							<Custom>
+								<Effect Name="Wwise_Time_Stretch_(Custom)" ID="{B696F716-BB1A-4C2A-8C84-3534D4C01C00}" ShortID="596630530" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+									<PropertyList>
+										<Property Name="TimeStretch" Type="Real32" Value="81"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy_hit_01" ID="{84A79603-B64C-44D6-B5BF-70D4BA01F1ED}" ShortID="598707975">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy_hit_01" ID="{4916791B-E539-4F6B-98B2-71880D51E23D}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\enemy_hit_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="783235013"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy_hit_01" ID="{4916791B-E539-4F6B-98B2-71880D51E23D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy_hit_02" ID="{8C409301-D976-49D5-AE08-AFCA002F8BE7}" ShortID="974255909">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy_hit_02" ID="{A2FA8E77-1461-4E72-901F-D40D6B0DFE48}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\enemy_hit_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="51906525"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy_hit_02" ID="{A2FA8E77-1461-4E72-901F-D40D6B0DFE48}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy_hit_03" ID="{7C818F77-785F-4F75-97B6-6FE723E98283}" ShortID="420254346">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy_hit_03" ID="{9D9989F3-28E9-44F8-8231-89FBE0A3D9F1}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\enemy_hit_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="380472414"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy_hit_03" ID="{9D9989F3-28E9-44F8-8231-89FBE0A3D9F1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy_hit_04" ID="{AFF83454-98D7-4D9B-ABC4-1608C1F59B8A}" ShortID="165029121">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy_hit_04" ID="{135CFD2E-2F05-45EB-85B5-5443214D08CA}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\enemy_hit_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="774444380"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy_hit_04" ID="{135CFD2E-2F05-45EB-85B5-5443214D08CA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy_hit_05" ID="{41D00FD8-2191-448B-B982-3D6E092118BA}" ShortID="368200450">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy_hit_05" ID="{781ED378-E494-439C-AE03-1F0003CC71F7}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\enemy_hit_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="772945989"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy_hit_05" ID="{781ED378-E494-439C-AE03-1F0003CC71F7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="destroy" ID="{EEBF766E-3EAB-4E08-93B7-1B0452B78E93}" ShortID="627674857">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{7796D4AC-4AC2-480A-A5FD-4A09AED9EDDB}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="707"/>
+											<Property Name="Min" Type="Real64" Value="-960"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="Effect1">
+							<Custom>
+								<Effect Name="Wwise_Guitar_Distortion_(Custom)" ID="{3DAEC2E6-183D-4712-831A-52345E6A84DB}" ShortID="851155386" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+									<PropertyList>
+										<Property Name="DistortionDrive" Type="Real32" Value="66"/>
+										<Property Name="DistortionType" Type="int32" Value="3"/>
+										<Property Name="WetDryMix" Type="Real32" Value="59"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="destroy_01" ID="{1D45EF08-B627-47EC-82F5-A603758AA251}" ShortID="197249538">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_01" ID="{1E126FD7-AD8C-4990-93D7-AB60C3D32FA1}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="493768019"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_01" ID="{1E126FD7-AD8C-4990-93D7-AB60C3D32FA1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="destroy_02" ID="{58BF2C01-05E2-45A4-A685-CBFA292EAC39}" ShortID="896663569">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_02" ID="{F7863BF1-5644-4A99-967F-BC4B89EF257C}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="454572879"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_02" ID="{F7863BF1-5644-4A99-967F-BC4B89EF257C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="destroy_03" ID="{EB3E52DA-F210-4E4C-AF2F-EF25768FD52C}" ShortID="357004562">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_03" ID="{CDF15D27-A4F7-453E-A324-E1EAD3694A0D}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1021565917"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_03" ID="{CDF15D27-A4F7-453E-A324-E1EAD3694A0D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="destroy_04" ID="{F516572B-6506-4DEF-96BF-2538359FB9BC}" ShortID="662037415">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_04" ID="{98ADA219-DCE3-4728-A20A-933B416A85F9}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="799965384"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_04" ID="{98ADA219-DCE3-4728-A20A-933B416A85F9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="destroy_05" ID="{6E7BC628-F0F4-409D-ACAE-6162986DBA43}" ShortID="64362507">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_05" ID="{0ECCB07A-871C-4D72-831E-755F31F6AA0F}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="481815418"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_05" ID="{0ECCB07A-871C-4D72-831E-755F31F6AA0F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="destroy_06" ID="{018023AB-15F1-4EA3-812C-0867EF31D91B}" ShortID="494371625">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="destroy_06" ID="{97CFDF75-9529-47EC-B384-7D6D56704932}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\destroy_06.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="962486194"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="destroy_06" ID="{97CFDF75-9529-47EC-B384-7D6D56704932}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="bonus_01" ID="{3DD859E4-2E34-4A73-A396-4AB131138298}" ShortID="717450361">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="bonus_01" ID="{21D52567-1356-4A9F-B8AA-70DFD5B56778}">
+							<Language>SFX</Language>
+							<AudioFile>TanksSound\bonus_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="42738685"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="bonus_01" ID="{21D52567-1356-4A9F-B8AA-70DFD5B56778}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="ice_spell" ID="{B69EBD4A-B14F-48B3-9FE3-90771701DE0E}" ShortID="708408139">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="ice_spell_01" ID="{885E2A0A-F7D1-4F25-91E4-E0ED17D35F49}" ShortID="898015912">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_01" ID="{0457B2AA-CAC0-4DFD-B505-B1426ADC52D7}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="695129956"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_01" ID="{0457B2AA-CAC0-4DFD-B505-B1426ADC52D7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ice_spell_02" ID="{DECBFA4B-D293-4C89-916B-6CE234F5B2A9}" ShortID="630315771">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_02" ID="{8FB8738C-D77F-4A78-B2C8-9DFB841AC805}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="846817107"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_02" ID="{8FB8738C-D77F-4A78-B2C8-9DFB841AC805}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ice_spell_03" ID="{4D170E23-4BA1-48D8-AFC0-BA9D96CF9E59}" ShortID="395680132">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_03" ID="{237533CE-78ED-4BFB-AAA3-8606351EC3B3}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="460525369"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_03" ID="{237533CE-78ED-4BFB-AAA3-8606351EC3B3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ice_spell_04" ID="{7770B651-D1BE-4B7D-908F-C0FEF3A295B2}" ShortID="159628163">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_04" ID="{8ED240A3-2E6C-4AEB-A4F9-2BA35B68A94F}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="460950254"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_04" ID="{8ED240A3-2E6C-4AEB-A4F9-2BA35B68A94F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ice_spell_05" ID="{17F735E6-32CA-46B6-9FC7-0EE0603ADA31}" ShortID="111241436">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_05" ID="{CAEF8AE2-439E-4A4A-9C9D-5D65F909333A}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="355793136"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_05" ID="{CAEF8AE2-439E-4A4A-9C9D-5D65F909333A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ice_spell_06" ID="{E076162D-D505-456F-8DE6-899C7247808A}" ShortID="748882909">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ice_spell_06" ID="{DBA36366-FE8E-4A4C-99AA-BE3AC7AF68B6}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ice_spell_06.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="653776529"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ice_spell_06" ID="{DBA36366-FE8E-4A4C-99AA-BE3AC7AF68B6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="ricochet" ID="{D40ED443-9E32-494A-9CA3-337D1631E752}" ShortID="935975490">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="ricochet_01" ID="{94567F4F-1CBF-42FA-B9D2-EE975A766048}" ShortID="855402464">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ricochet_01" ID="{41B9E2E5-EA28-4C85-9852-CD53A15511D8}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ricochet_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1043393548"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ricochet_01" ID="{41B9E2E5-EA28-4C85-9852-CD53A15511D8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ricochet_02" ID="{A3E52458-C824-4775-A34C-3CB643FFFF0B}" ShortID="42079746">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ricochet_02" ID="{651789A8-617B-4C44-8596-E4541FC27AFA}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ricochet_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="971126510"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ricochet_02" ID="{651789A8-617B-4C44-8596-E4541FC27AFA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ricochet_03" ID="{8818D7BC-1EDC-467F-B188-D490238A5E2D}" ShortID="573412275">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ricochet_03" ID="{11717DFE-C777-44E7-9E20-0A97EB6336A9}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ricochet_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="570695517"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ricochet_03" ID="{11717DFE-C777-44E7-9E20-0A97EB6336A9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ricochet_04" ID="{A5DEB08E-E7BC-46A4-990B-3D3528FF6E13}" ShortID="20776252">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ricochet_04" ID="{24D2B658-AB5E-4FE1-9A72-4064F2F18C01}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ricochet_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="202012788"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ricochet_04" ID="{24D2B658-AB5E-4FE1-9A72-4064F2F18C01}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ricochet_05" ID="{7C78FF2B-69C1-49EB-8C01-5A2044F3D077}" ShortID="280953447">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ricochet_05" ID="{3C112A86-D2A9-461A-83AF-858CD21A2052}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\ricochet_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="550065226"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ricochet_05" ID="{3C112A86-D2A9-461A-83AF-858CD21A2052}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="wall_hit" ID="{9620CCCF-55CF-4AF1-9A95-B939470EB7B1}" ShortID="80309957">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="wall_explosion_01" ID="{4547E177-FDA2-4283-BA87-FCDE7840456C}" ShortID="663331914">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_01" ID="{E42E33EC-2F78-4023-AAD9-74BF7AD26EDD}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="899709178"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_01" ID="{E42E33EC-2F78-4023-AAD9-74BF7AD26EDD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wall_explosion_02" ID="{6F80A274-4226-4F0E-8656-2B18DB72CD8F}" ShortID="695313881">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_02" ID="{675F91E4-F45F-453E-A82F-9D583CEDE69B}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="41041547"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_02" ID="{675F91E4-F45F-453E-A82F-9D583CEDE69B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wall_explosion_03" ID="{9B5A7769-E634-484D-9C15-0A11A278C547}" ShortID="939782764">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_03" ID="{3FCFDEDA-2839-476C-B8BB-27F07C10EF93}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="120318887"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_03" ID="{3FCFDEDA-2839-476C-B8BB-27F07C10EF93}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wall_explosion_04" ID="{6CEF6EF2-60DF-425E-A587-4171CF42FA65}" ShortID="447254633">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_04" ID="{BFA6CF66-B19D-4C4F-B9A7-985C33AF058D}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="728125586"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_04" ID="{BFA6CF66-B19D-4C4F-B9A7-985C33AF058D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wall_explosion_05" ID="{7FA13F64-7F3A-44E5-939F-89818A266E5E}" ShortID="868860554">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_05" ID="{914B52E8-861C-472F-B913-F60A0789FFC9}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="958207039"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_05" ID="{914B52E8-861C-472F-B913-F60A0789FFC9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wall_explosion_06" ID="{9B1023D5-EB02-47E9-B01A-FAF190F95D4B}" ShortID="30596770">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wall_explosion_06" ID="{59DC5FBE-C2A1-49AD-A0EB-BA6D31BFB804}">
+									<Language>SFX</Language>
+									<AudioFile>TanksSound\wall_explosion_06.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="618847448"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wall_explosion_06" ID="{59DC5FBE-C2A1-49AD-A0EB-BA6D31BFB804}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="menu_01" ID="{E54372B7-C0EF-4ED8-B43C-31BF3DFFB950}" ShortID="903488686">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu_01" ID="{3EFF7991-58A1-44EC-8B68-383558657627}">
+							<Language>SFX</Language>
+							<AudioFile>TanksSound\menu_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="155357860"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu_01" ID="{3EFF7991-58A1-44EC-8B68-383558657627}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu_02" ID="{42D62DA1-435B-4FD5-B454-BDBA9A84C79F}" ShortID="531228462">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D630DD53-61A4-4AD0-A268-D6F5EB3C06BD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17D3C05B-E85A-4EA9-BAAB-53EAC819B41D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu_02" ID="{9F3F2EAD-EACF-4425-838C-C5E16668B7AE}">
+							<Language>SFX</Language>
+							<AudioFile>TanksSound\menu_02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="313668697"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu_02" ID="{9F3F2EAD-EACF-4425-838C-C5E16668B7AE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

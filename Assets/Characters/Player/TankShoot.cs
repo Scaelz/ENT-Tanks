@@ -86,6 +86,7 @@ public class TankShoot : MonoBehaviour, IShooter
 
     void Recoil()
     {
+        AkSoundEngine.PostEvent("play_fire", gameObject);
         rb.AddForce(-cabinTransform.forward * recoilPower);
     }
 

@@ -22,6 +22,7 @@ public abstract class BaseBonus : MonoBehaviour
         {
             // Player take bonus
             TakeBonus();
+            AkSoundEngine.PostEvent("play_bonus", gameObject);
             timeToDeath = 0;
         }
     }

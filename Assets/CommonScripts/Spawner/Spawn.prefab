@@ -47,6 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEffect: {fileID: 5569859824945500650}
   audioSource: {fileID: 1381693491021663380}
+  play_spawn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d71c38318dfd8c74cab18dd400cce3d5,
+      type: 2}
 --- !u!82 &1381693491021663380
 AudioSource:
   m_ObjectHideFlags: 0

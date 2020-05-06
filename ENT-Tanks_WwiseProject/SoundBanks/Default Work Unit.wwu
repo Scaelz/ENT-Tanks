@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3C7B0152-4885-42DA-B63B-326F20913DCD}" SchemaVersion="97">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{3C7B0152-4885-42DA-B63B-326F20913DCD}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="TanksSoundBank" ID="{4FE90530-3B66-4C55-B1B3-47B946B5D32E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="play_spawn" ID="{92A69F27-86E7-449E-B72C-CF24718FAB46}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_bonus" ID="{66C5F5D6-A9B4-4666-94E8-CE6EB6469D67}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_fire" ID="{F8FA78F5-53D0-471E-B904-8D76391DD14F}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_destroy" ID="{0E2103DF-97B6-4F2A-B086-234983F8C428}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_enemy_hit" ID="{2E538080-94FD-4FA2-BB57-F970877FC8E7}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="MenuSoundBank" ID="{61E3479A-CFB0-482E-B194-EFCF9550BC8C}">
+					<ObjectInclusionList>
+						<ObjectRef Name="play_menu_01" ID="{A8FB2308-9BAC-4F7E-B1AE-06B0266BAE01}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_menu_02" ID="{80BEA3E0-33E0-4FF4-8D2E-D5B14C668272}" WorkUnitID="{13F27EA1-88D5-4F5C-BF34-D98E71DE8035}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9867a4f1ab5b5804b819d198addb1b85, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 45949398e8a299439988961692c8b99c
+    GuidInternal: 
+    m_lastTime: -8586131095639582426
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 5bc0d3175ae8a94ebaab53eac819b41d
+    GuidInternal: 
+    m_lastTime: -8586131095639742435
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: 52017b3c8548da42b63b326f20913dcd
+    GuidInternal: 
+    m_lastTime: -8586128286825153345
+    List:
+    - name: MenuSoundBank
+      guid: 9a47e361b0cf2e48b194efcf9550bc8c
+      id: 2316487327
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MenuSoundBank
+        ObjectType: 7
+      Path: Default Work Unit\MenuSoundBank
+    - name: TanksSoundBank
+      guid: 3005e94f663b554cb1b347b946b5d32e
+      id: 2993528031
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TanksSoundBank
+        ObjectType: 7
+      Path: Default Work Unit\TanksSoundBank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: a17ef213d5885c4fbf34d98e71de8035
+    GuidInternal: 
+    m_lastTime: -8586128292217151750
+    List:
+    - name: play_bonus
+      guid: d6f5c566b4a9664694e8ce6eb6469d67
+      id: 3817573795
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_bonus
+        ObjectType: 3
+      Path: Default Work Unit\play_bonus
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_destroy
+      guid: df03210eb6972a4fb086234983f8c428
+      id: 4013708024
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_destroy
+        ObjectType: 3
+      Path: Default Work Unit\play_destroy
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_enemy_hit
+      guid: 8080532efd94a24fbb57f970877fc8e7
+      id: 2045007312
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_enemy_hit
+        ObjectType: 3
+      Path: Default Work Unit\play_enemy_hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_fire
+      guid: f578faf8d0531e47b9048d76391dd14f
+      id: 3015324718
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_fire
+        ObjectType: 3
+      Path: Default Work Unit\play_fire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_menu_01
+      guid: 0823fba8ac9b7e4fb1ae06b0266bae01
+      id: 3868654023
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_menu_01
+        ObjectType: 3
+      Path: Default Work Unit\play_menu_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_menu_02
+      guid: e0a3be80e033f44f8d2ed5b14c668272
+      id: 3868654020
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_menu_02
+        ObjectType: 3
+      Path: Default Work Unit\play_menu_02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: play_spawn
+      guid: 279fa692e7869e44b72ccf24718fab46
+      id: 1012143543
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play_spawn
+        ObjectType: 3
+      Path: Default Work Unit\play_spawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: f42c34a842644a41b56e301cedadcd26
+    GuidInternal: 
+    m_lastTime: -8586131095639692432
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: c43454043c9e90478a1e20f46cb808e7
+    GuidInternal: 
+    m_lastTime: -8586131095639712434
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: ed3cf41e148c3645864726ee85f10ebf
+    GuidInternal: 
+    m_lastTime: -8586131095639712434
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPath: Default Work Unit
+    guid: efac7e27f692af4d8a67aa61e9080f5a
+    GuidInternal: 
+    m_lastTime: -8586131095639652430
+    List: []
+  ExpandedItems:
+  - /ENT-Tanks_WwiseProject
+  - /ENT-Tanks_WwiseProject/Events
+  - /ENT-Tanks_WwiseProject/Events/Default Work Unit
+  - /ENT-Tanks_WwiseProject/SoundBanks
+  - /ENT-Tanks_WwiseProject/SoundBanks/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

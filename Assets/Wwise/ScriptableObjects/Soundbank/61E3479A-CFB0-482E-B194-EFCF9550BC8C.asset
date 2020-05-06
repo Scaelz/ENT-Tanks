@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ceaf33ed7dcaa547a1c51ea4e8ea20c, type: 3}
+  m_Name: 61E3479A-CFB0-482E-B194-EFCF9550BC8C
+  m_EditorClassIdentifier: 
+  objectName: MenuSoundBank
+  id: 2316487327
+  guid: 61E3479A-CFB0-482E-B194-EFCF9550BC8C

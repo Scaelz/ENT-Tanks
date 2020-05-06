@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
 {
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] AudioSource audioSource;
-
+    public AK.Wwise.Event play_spawn;
     public Vector3 position { get => transform.position; }
     public bool Idle { get; private set; } = true;
 
@@ -14,6 +14,8 @@ public class Spawn : MonoBehaviour
     {
         Idle = false;
         spawnEffect.Play();
+        play_spawn.Post(gameObject);
+
         StartCoroutine(StopProcessing(spawnTime));
     }
 
@@ -22,6 +24,7 @@ public class Spawn : MonoBehaviour
         yield return new WaitForSeconds(delay);
         spawnEffect.Stop();
         audioSource.Play();
+
         float clipDuration = audioSource.clip.length;
         yield return new WaitForSeconds(clipDuration);
         Idle = true;
